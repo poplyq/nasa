@@ -1,0 +1,13 @@
+.headerContainer {
+  padding: 5px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  background-color: yellow;
+  justify-content: space-between;
+  .icon {
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+}

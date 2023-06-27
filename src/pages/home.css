@@ -1,0 +1,17 @@
+.imagephoto{
+    width: 200px;
+    height: 200px;
+
+    transition: all .3s linear;
+}
+.imagephoto:hover{
+    transform: scale(2);
+}
+
+.containerPhoto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95vh;
+    overflow: auto;
+}

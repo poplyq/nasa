@@ -1,0 +1,21 @@
+.headerLogo{
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 10px;
+    transition: all .2s linear;
+}
+.headerLogo:hover{
+    transform: scale(1.1); 
+}
+.toogleImage{
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all .2s linear;
+
+}
+.toogleImage:hover{
+    transform: scale(1.15);
+}

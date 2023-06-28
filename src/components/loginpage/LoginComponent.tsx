@@ -1,26 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import EmailInput from '../common/inputs/EmailInput';
 import PasswordInput from '../common/inputs/PasswordInput';
 import ButtonSubmit from '../common/buttons/ButtonSubmit';
 import loginRequest from '../../types/request/loginRequest';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { makeUserResponse } from '../../helpers/functions/makeUserResponse';
+import { setUser } from '../../store/slices/userSlice';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '../../store/store';
 
 const LoginComponent = () => {
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-    const [isValid, setIsValid] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [isValid, setIsValid] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const { user } = useAppSelector((state) => state.userState);
+  console.log(user);
 
-    const loginUser = () =>{
-        
-    }
+  const loginUser = (data: loginRequest) => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, data.email, data.password)
+      .then((user) => makeUserResponse(user))
+      .then((user) => dispatch(setUser(user)));
+  };
   return (
     <div className="loginContainer">
       <h3 className="">Войти</h3>
       <p className=""> Почта</p>
-      <EmailInput
-        setEmail={setEmail}
-        email={email}
-        setIsValid={setIsValid}
-      />
+      <EmailInput setEmail={setEmail} email={email} setIsValid={setIsValid} />
       <p className="loginPassword">Пароль</p>
       <PasswordInput
         setPassword={setPassword}
@@ -31,11 +38,11 @@ const LoginComponent = () => {
         handleClick={loginUser}
         value={{ email, password } as loginRequest}
         name="Войти"
-        isValid={isValid}
+        isValid={true}
         link="/home"
       />
     </div>
-  )
-}
+  );
+};
 
-export default LoginComponent
+export default LoginComponent;

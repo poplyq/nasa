@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { dataApi } from './api/dataApi/dataApi';
+import userReducer from './slices/userSlice';
 
 
 export const store = configureStore({
   reducer: {
-    [dataApi.reducerPath]: dataApi.reducer
+    [dataApi.reducerPath]: dataApi.reducer,
+    userState: userReducer,
   },
 middleware: (getDefaultMiddleware) => getDefaultMiddleware({}).concat([dataApi.middleware])
 });

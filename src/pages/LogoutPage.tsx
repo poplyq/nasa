@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UnAuthUser = () => {
+const LogoutPage = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const UnAuthUser = () => {
   )
 }
 
-export default UnAuthUser
+export default LogoutPage

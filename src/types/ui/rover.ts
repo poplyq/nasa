@@ -6,7 +6,7 @@ export interface Rover {
   status: string;
 }
 
-export interface RoversType{
-  name : string
-  param : string
+export interface RoversType {
+  name: string
+  param: string
 }

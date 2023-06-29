@@ -1,7 +1,5 @@
 
-import { metaData } from "./metaData"
-
-export interface podResponse{
+export interface PodResponse{
     date: string
     explanation: string
     hdurl:string

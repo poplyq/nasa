@@ -4,7 +4,7 @@ import LoginModule from '../modules/loginpage/LoginModule'
 const LoginPage = () => {
   return (
     <div>
-     <LoginModule/> 
+      <LoginModule />
     </div>
   )
 }

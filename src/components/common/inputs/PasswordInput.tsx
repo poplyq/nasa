@@ -1,29 +1,24 @@
-import React, { FC } from 'react';
+import React from 'react'
 
 interface PasswordInputProps {
-  password: string;
-  setPassword(arg: string): void;
-  placeholder: string;
+  password: string
+  setPassword(arg: string): void
+  placeholder: string
 }
 
-function PasswordInput({
-  password,
-  setPassword,
-  placeholder,
-}: PasswordInputProps) {
-
+function PasswordInput({ password, setPassword, placeholder }: PasswordInputProps) {
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    setPassword(e.currentTarget.value);
-  };
+    setPassword(e.currentTarget.value)
+  }
   return (
     <input
-      type="password"
+      type='password'
       className=''
       value={password}
       onChange={handleChange}
       placeholder={placeholder}
     />
-  );
+  )
 }
 
-export default PasswordInput;
+export default PasswordInput

@@ -8,7 +8,6 @@ const LoginModule = () => (
     <LoginComponent />
     <NavigationLogin />
     <GoogleLogin />
-
   </div>
 )
 

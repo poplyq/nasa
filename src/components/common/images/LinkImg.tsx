@@ -1,17 +1,16 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './images.scss'
 
-interface LinkImgProps{
-    imgUrl: string
-    link: string
+interface LinkImgProps {
+  imgUrl: string
+  link: string
 }
-function LinkImg ({imgUrl, link}:LinkImgProps) {
+function LinkImg({ imgUrl, link }: LinkImgProps) {
   return (
-
-<Link to={link}>
-    <img src={imgUrl} className='headerLogo' alt=''/>
-</Link>
+    <Link to={link}>
+      <img src={imgUrl} className='headerLogo' alt='' />
+    </Link>
   )
 }
 

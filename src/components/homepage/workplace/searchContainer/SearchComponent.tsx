@@ -1,18 +1,18 @@
-import React from 'react';
-import { searchItem } from '../../../../types/ui/collection';
-import SearchBlock from './SearchBlock';
-import './searchcontainer.scss';
+import React from 'react'
+import { CollectionType } from '../../../../types/ui/collection'
+import SearchBlock from './SearchBlock'
+import './searchcontainer.scss'
 interface SearchComponentProps {
-  array: searchItem[] | undefined;
+  data: CollectionType
 }
-const SearchComponent = ({ array }: SearchComponentProps) => {
+const SearchComponent = ({ data }: SearchComponentProps) => {
   return (
-    <div className="searchComponentContainer">
-      {array?.map((ele, id) => (
-        <SearchBlock element={ele} key={id} />
+    <div className='searchComponentContainer'>
+      {data.cards.map((card) => (
+        <SearchBlock card={card} key={card.id} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default SearchComponent;
+export default SearchComponent

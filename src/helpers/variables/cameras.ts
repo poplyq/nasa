@@ -1,6 +1,6 @@
-import { cameraType } from '../../types/ui/camera';
+import { CameraType } from '../../types/ui/camera'
 
-export const cameras: cameraType[] = [
+export const cameras: CameraType[] = [
   { name: 'Front Hazard Avoidance Camera', param: 'fhaz' },
   { name: 'Rear Hazard Avoidance Camera', param: 'rhaz' },
   { name: 'Mast Camera', param: 'mast' },
@@ -9,4 +9,4 @@ export const cameras: cameraType[] = [
   { name: 'Navigation Camera', param: 'navcam' },
   { name: 'Panoramic Camera', param: 'pancam' },
   { name: 'Miniature Thermal Emission Spectrometer (Mini-TES)', param: 'minites' },
-];
+]

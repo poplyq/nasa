@@ -1,24 +1,26 @@
 import React from 'react'
-import { useParams, useSearchParams } from 'react-router-dom';
-import { useGetDataSearchQuery } from '../store/api/searchApi/serchApi';
+import { useSearchParams } from 'react-router-dom'
+import { useGetDataSearchQuery } from '../store/api/searchApi/serchApi'
 
 const ElementPage = () => {
- const [searchParams] = useSearchParams();
- const {data} = useGetDataSearchQuery(searchParams.get('search'))
- console.log(data);
- 
- 
+  const [searchParams] = useSearchParams()
+  const { data } = useGetDataSearchQuery(searchParams.get('search'))
+
   return (
-
-    <div >
-      <img src={data?.items[0].links[0].href} alt='' className='searchBlockImg'/>
-     <div className='searchBlockTitleContainer'>
-      <p>{data?.items[0].data[0].title}</p>
-      <p>{data?.items[0].data[0].location}</p>
-      <p>{data?.items[0].data[0].date_created}</p>
-      </div>
-      </div>
-
+    <div>
+      {data &&
+        data.cards.map((card) => (
+          <div key={card.id}>
+            <img src={card.image} alt='' className='searchBlockImg' />
+            <div className='searchBlockTitleContainer'>
+              <p>{card.title}</p>
+              <p>{card.location}</p>
+              <p>{card.date}</p>
+              <p>{card.description}</p>
+            </div>
+          </div>
+        ))}
+    </div>
   )
 }
 

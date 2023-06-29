@@ -1,7 +1,9 @@
-export interface metaData {
-  request: metaRequest
+export interface MetaData {
+  request: MetaRequest
+  // на будущее пускай побудет тут any
+  // eslint-disable-next-line
   response: any;
 }
-interface metaRequest {
-  url: string;
+interface MetaRequest {
+  url: string
 }

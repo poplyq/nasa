@@ -3,7 +3,7 @@ import RegistrationComponent from '../../components/registrationpage/Registratio
 
 const RegistrationModule = () => {
   return (
-<RegistrationComponent/>
+    <RegistrationComponent />
   )
 }
 

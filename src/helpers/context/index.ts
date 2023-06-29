@@ -1,4 +1,7 @@
+import { Auth } from 'firebase/auth'
+import { createContext } from 'react'
 
-import { createContext } from 'react';
 // поступаемый в контект тип Auth конфликтует с типом <any , AnyAction > Context
-export const Context = createContext<any>(null);
+// на будущее пускай побудет тут any
+// eslint-disable-next-line
+export const Context = createContext<Auth | null>(null);

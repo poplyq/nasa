@@ -1,17 +1,15 @@
-
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IUser } from '../../types/ui/user';
-import { User, UserCredential } from 'firebase/auth';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { IUser } from '../../types/ui/user'
 
 interface initialStateProps {
-  user: IUser | null;
-  error: boolean;
+  user: IUser | null
+  error: string
 }
 
 const initialState: initialStateProps = {
   user: null,
-  error: false,
-};
+  error: '',
+}
 
 export const userSlice = createSlice({
   initialState,
@@ -20,14 +18,14 @@ export const userSlice = createSlice({
     logout: () => initialState,
     setUser: (state, action: PayloadAction<IUser>) => {
       state.user = action.payload
-      state.error = false;
+      state.error = ''
     },
-    errorUser(state, action: PayloadAction<boolean>) {
-      state.error = action.payload;
+    errorUser(state, action: PayloadAction<string>) {
+      state.error = action.payload
     },
   },
-});
+})
 
-export default userSlice.reducer;
+export default userSlice.reducer
 
-export const { setUser, logout, errorUser } = userSlice.actions;
+export const { setUser, logout, errorUser } = userSlice.actions

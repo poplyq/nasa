@@ -2,6 +2,6 @@ import { Photos } from "../ui/photos";
 
 
 
-export interface dataResponse {
+export interface DataResponse {
     photos: Photos[]
 }

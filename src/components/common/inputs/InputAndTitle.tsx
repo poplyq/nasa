@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 interface InputAndTitleProps {
   value: string | undefined;
   setValue(arg: string): void;

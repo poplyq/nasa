@@ -1,8 +1,8 @@
-import { ICamera } from "./camera";
+import { Camera } from "./camera";
 import { Rover } from "./rover";
 
 export interface Photos {
-  camera: ICamera;
+  camera: Camera;
   earth_date: string;
   id: number;
   img_src: string;

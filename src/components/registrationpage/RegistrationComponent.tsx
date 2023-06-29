@@ -43,7 +43,7 @@ const RegistrationComponent = () => {
         handleClick={register}
         value={{ email, password } as loginRequest}
         name="Войти"
-        isValid={true}
+        isValid={isValid}
         link="/home"
       />
       <GoogleLogin />

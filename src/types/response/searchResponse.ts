@@ -1,5 +1,5 @@
-import { collectionType } from "../ui/collection";
+import { CollectionType } from '../ui/collection'
 
-export interface searchResponse{
-    collection: collectionType 
+export interface SearchResponse {
+    collection: CollectionType
 }

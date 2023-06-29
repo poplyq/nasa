@@ -1,27 +1,27 @@
-import React from 'react';
-import { searchItem } from '../../../../types/ui/collection';
-import './searchcontainer.scss';
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import { Card } from '../../../../types/ui/collection'
+import './searchcontainer.scss'
+import { useNavigate } from 'react-router-dom'
 
 interface SearchBlockProps {
-  element: searchItem;
-  key: number;
+  card: Card
+  key: string
 }
-function SearchBlock({ element }: SearchBlockProps) {
-  const navigate = useNavigate();
+function SearchBlock({ card }: SearchBlockProps) {
+  const navigate = useNavigate()
   const handleClick = () => {
-    navigate(`/element?search=${element.data[0].nasa_id}`);
-  };
+    navigate(`/element?search=${card.id}`)
+  }
   return (
-    <div className="searchBlock" onClick={handleClick}>
-      <img src={element.links[0].href} alt="" className="searchBlockImg" />
-      <div className="searchBlockTitleContainer">
-        <p>{element.data[0].title}</p>
-        <p>{element.data[0].location}</p>
-        <p>{element.data[0].date_created}</p>
+    <div className='searchBlock' onClick={handleClick}>
+      <img src={card.image} alt='' className='searchBlockImg' />
+      <div className='searchBlockTitleContainer'>
+        <p>{card.title}</p>
+        <p>{card.location}</p>
+        <p>{card.date}</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default SearchBlock;
+export default SearchBlock

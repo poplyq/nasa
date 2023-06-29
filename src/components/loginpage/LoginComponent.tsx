@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import EmailInput from '../common/inputs/EmailInput';
 import PasswordInput from '../common/inputs/PasswordInput';
 import ButtonSubmit from '../common/buttons/ButtonSubmit';
 import loginRequest from '../../types/request/loginRequest';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { makeUserResponse } from '../../helpers/functions/makeUserResponse';
 import { setUser } from '../../store/slices/userSlice';
 import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../../store/store';
+
+import { Context } from '../../helpers/context';
 
 const LoginComponent = () => {
+  const { auth } = useContext(Context);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isValid, setIsValid] = useState<boolean>(false);
   const dispatch = useDispatch();
-  const { user } = useAppSelector((state) => state.userState);
-  console.log(user);
 
   const loginUser = (data: loginRequest) => {
-    const auth = getAuth();
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((user) => makeUserResponse(user))
       .then((user) => dispatch(setUser(user)));
@@ -38,7 +37,7 @@ const LoginComponent = () => {
         handleClick={loginUser}
         value={{ email, password } as loginRequest}
         name="Войти"
-        isValid={true}
+        isValid={isValid}
         link="/home"
       />
     </div>

@@ -1,14 +1,14 @@
 import React from 'react';
-import { IPhotos } from '../../../../types/ui/photos';
+import { Photos } from '../../../../types/ui/photos';
 interface PhotoContainerProps {
-  data: IPhotos;
+  data: Photos;
   key: number;
 }
 const PhotoContainer = ({ data }: PhotoContainerProps) => {
   const handleClick = () => {};
   return (
     <div>
-      <img src={data.img_src} className="imagephoto" />
+      <img src={data.img_src} className="imagephoto" alt=''/>
       {data.earth_date}
       <button onClick={handleClick}>В избранное</button>
     </div>

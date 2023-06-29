@@ -1,7 +1,7 @@
-import { IPhotos } from "../ui/photos";
+import { Photos } from "../ui/photos";
 
 
 
 export interface dataResponse {
-    photos: IPhotos[]
+    photos: Photos[]
 }

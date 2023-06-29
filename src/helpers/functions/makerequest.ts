@@ -1,10 +1,8 @@
-import { dataRequest } from '../../types/request/dataRequest';
-
 export const makeRequest = (data: {
   rover: string;
   sol: string;
   camera?: string;
-  page: number;
+  page: string;
 }) => {
   return {
     rover: data.rover,

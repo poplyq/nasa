@@ -1,0 +1,23 @@
+.searchComponentContainer {
+  width: 800px;
+  margin: 20px auto;
+  border: 1px black solid;
+  max-height: 90vh;
+  overflow: auto;
+  .searchBlock {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    .searchBlockImg {
+      width: 30%;
+    }
+    .searchBlockTitleContainer {
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      align-items: flex-start;
+    }
+  }
+}

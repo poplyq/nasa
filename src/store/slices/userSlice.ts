@@ -4,7 +4,7 @@ import { IUser } from '../../types/ui/user';
 import { User, UserCredential } from 'firebase/auth';
 
 interface initialStateProps {
-  user: any | null;
+  user: IUser | null;
   error: boolean;
 }
 

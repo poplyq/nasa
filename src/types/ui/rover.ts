@@ -1,4 +1,4 @@
-export interface IRover {
+export interface Rover {
   id: number;
   landing_date: string;
   launch_date: string;
@@ -6,7 +6,7 @@ export interface IRover {
   status: string;
 }
 
-export interface roverType{
+export interface RoversType{
   name : string
   param : string
 }

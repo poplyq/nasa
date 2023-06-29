@@ -6,9 +6,8 @@ import loginRequest from '../../types/request/loginRequest';
 import { useDispatch } from 'react-redux';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from '../../store/slices/userSlice';
-
-import { useAppSelector } from '../../store/store';
 import { makeUserResponse } from '../../helpers/functions/makeUserResponse';
+import GoogleLogin from '../loginpage/GoogleLogin';
 
 const RegistrationComponent = () => {
   const dispatch = useDispatch();
@@ -17,8 +16,6 @@ const RegistrationComponent = () => {
   const [password, setPassword] = useState<string>('');
   const [isValid, setIsValid] = useState<boolean>(false);
   const [confirmPass, setConfirmPass] = useState<string>('');
-  const { user } = useAppSelector((state) => state.userState);
-  console.log(user);
 
   const register = (data: loginRequest) => {
     const auth = getAuth();
@@ -49,6 +46,7 @@ const RegistrationComponent = () => {
         isValid={true}
         link="/home"
       />
+      <GoogleLogin />
     </div>
   );
 };

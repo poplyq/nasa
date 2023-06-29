@@ -1,12 +1,12 @@
 import { ICamera } from "./camera";
-import { IRover } from "./rover";
+import { Rover } from "./rover";
 
-export interface IPhotos {
+export interface Photos {
   camera: ICamera;
   earth_date: string;
   id: number;
   img_src: string;
-  rover: IRover
+  rover: Rover
   sol: number;
 }
 

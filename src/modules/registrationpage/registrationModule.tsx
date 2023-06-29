@@ -1,10 +1,9 @@
 import React from 'react'
+import RegistrationComponent from '../../components/registrationpage/RegistrationComponent'
 
 const RegistrationModule = () => {
   return (
-    <div>
-      
-    </div>
+<RegistrationComponent/>
   )
 }
 

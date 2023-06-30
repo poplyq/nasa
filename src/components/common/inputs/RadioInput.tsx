@@ -1,25 +1,26 @@
-import React from 'react';
+import React from 'react'
 
 interface RadioInputProps<T, K> {
-  array: T[];
-  setElement(arg: K): void;
+  array: T[]
+  setElement(arg: K): void
 }
-function RadioInput<T, K>({
-  array,
-  setElement,
-}: RadioInputProps<T, K>): JSX.Element {
+function RadioInput<T, K>({ array, setElement }: RadioInputProps<T, K>): JSX.Element {
+  // на будущее пускай побудет тут any
+  // eslint-disable-next-line
   const handleChange = (element: any) => {
-    setElement(element.param);
-  };
+    setElement(element.param)
+  }
   return (
-    <div className="radioInputContainer">
+    <div className='radioInputContainer'>
+      {/* // на будущее пускай побудет тут any */}
+      {/* eslint-disable-next-line  */}
       {array?.map((ele: any, id) => (
-        <div className="optionContainer">
-          <label key={id} className="radioInput" htmlFor={ele.name}>
+        <div className='optionContainer' key={id}>
+          <label key={id} className='radioInput' htmlFor={ele.name}>
             <input
-             className='input'
+              className='input'
               id={ele.name}
-              type="radio"
+              type='radio'
               name={`radio${array.length}`}
               onChange={() => handleChange(ele)}
             />
@@ -28,7 +29,7 @@ function RadioInput<T, K>({
         </div>
       ))}
     </div>
-  );
+  )
 }
 
-export default RadioInput;
+export default RadioInput

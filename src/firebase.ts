@@ -1,17 +1,13 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from 'firebase/app'
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA8WOU1FwEIvZiYt8HKC0kMq0kf7p5q4c8",
-  authDomain: "nasa-project-5509c.firebaseapp.com",
-  projectId: "nasa-project-5509c",
-  storageBucket: "nasa-project-5509c.appspot.com",
-  messagingSenderId: "163765684526",
-  appId: "1:163765684526:web:72324a294cc6deac6f52bf"
-};
-
-// Initialize Firebase
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+}
+// по доке нужно так
+// eslint-disable-next-line
 const app = initializeApp(firebaseConfig);

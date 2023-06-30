@@ -1,6 +1,6 @@
-export interface dataRequest {
-  rover : string
+export interface DataRequest {
+  rover: string
   sol: string
   camera: string | undefined
-  page: string  
+  page: string
 }

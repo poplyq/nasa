@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 interface InputAndTitleProps {
-  value: string | undefined;
-  setValue(arg: string): void;
-  title: string;
-  type: string;
+  value: string | undefined
+  setValue(arg: string): void
+  title: string
+  type: string
 }
 function InputAndTitle({ value, setValue, title, type }: InputAndTitleProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
+    setValue(e.target.value)
+  }
   return (
-    <div className="">
+    <div className=''>
       <p>{title}</p>
       <input
         value={value}
@@ -19,7 +19,7 @@ function InputAndTitle({ value, setValue, title, type }: InputAndTitleProps) {
         placeholder={`Enter ${title}`}
       ></input>
     </div>
-  );
+  )
 }
 
-export default InputAndTitle;
+export default InputAndTitle

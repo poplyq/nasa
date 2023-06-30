@@ -1,6 +1,5 @@
-
-export interface PodResponse{
-    date: string
-    explanation: string
-    hdurl:string
+export interface PodResponse {
+  date: string
+  explanation: string
+  hdurl: string
 }

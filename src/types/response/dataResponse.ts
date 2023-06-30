@@ -1,7 +1,5 @@
-import { Photos } from "../ui/photos";
-
-
+import { Photos } from '../ui/photos'
 
 export interface DataResponse {
-    photos: Photos[]
+  photos: Photos[]
 }

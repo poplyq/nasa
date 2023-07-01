@@ -9,7 +9,7 @@ import { setUser } from '../../store/slices/userSlice'
 import { makeUserResponse } from '../../helpers/functions/makeUserResponse'
 import GoogleLogin from '../loginpage/GoogleLogin'
 
-const RegistrationComponent = () => {
+const SignUp = () => {
   const dispatch = useDispatch()
 
   const [email, setEmail] = useState<string>('')
@@ -47,4 +47,4 @@ const RegistrationComponent = () => {
   )
 }
 
-export default RegistrationComponent
+export default SignUp

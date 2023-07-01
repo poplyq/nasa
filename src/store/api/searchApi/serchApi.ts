@@ -12,13 +12,13 @@ export const searchApi = createApi({
       getDataSearch: build.query<CollectionType, string | null>({
         query(req) {
           return {
-            url: `/search?q=${req}&page_size=2&media_type=image`,
+            url: `/search?q=${req}&page_size=5&media_type=image`,
           }
         },
         transformResponse: (response: CollectionResponse): CollectionType => {
           return {
-            url: response.href,
-            cards: response.items?.map((item) => {
+            url: response.collection.href,
+            cards: response.collection.items.map((item) => {
               return {
                 id: item.data[0].nasa_id,
                 date: item.data[0].date_created,

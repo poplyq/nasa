@@ -5,6 +5,7 @@ import { useGetDataSearchQuery } from '../store/api/searchApi/serchApi'
 const ElementPage = () => {
   const [searchParams] = useSearchParams()
   const { data } = useGetDataSearchQuery(searchParams.get('search'))
+  console.log(data)
 
   return (
     <div>

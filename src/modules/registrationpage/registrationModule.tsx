@@ -1,5 +1,5 @@
 import React from 'react'
-import RegistrationComponent from '../../components/registrationpage/RegistrationComponent'
+import RegistrationComponent from '../../components/registrationpage/SignUp'
 
 const RegistrationModule = () => {
   return <RegistrationComponent />

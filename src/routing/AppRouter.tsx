@@ -9,8 +9,8 @@ const AppRouter = () => {
   return user ? (
 <Routes>
     {
-        privateRoutes.map((value)=>
-        <Route path={value.path} element={value.component}/>
+        privateRoutes.map((route)=>
+        <Route path={route.path} element={<route.component/>}/>
         )
     }
 </Routes>

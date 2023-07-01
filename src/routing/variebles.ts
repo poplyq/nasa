@@ -1,4 +1,4 @@
-export const LOGIN_ROUTE :string = '/login'
+export const LOGIN_ROUTE  = '/login'
 export const SIGNUP_ROUTE = '/signup'
 export const HOME_ROUTE = '/home'
 export const ELEMENT_ROUTE = '/element'

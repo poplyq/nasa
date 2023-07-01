@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ComponentType } from "react";
 import ElementPage from "../pages/ElementPage";
 import FavoritesPage from "../pages/FavoritesPage";
 import HistoryPage from "../pages/HistoryPage";
@@ -10,7 +10,7 @@ import { ELEMENT_ROUTE, FAVORITES_ROUTE, HISTORY_ROUTE, HOME_ROUTE, LOGIN_ROUTE,
 
 interface PrivateRoutesType{
     path: string
-    component: NodeList
+    component: ComponentType
 }
 export const publickRoutes = [
     {
@@ -34,7 +34,7 @@ export const publickRoutes = [
 export const privateRoutes : PrivateRoutesType[]= [
     {
         path: HOME_ROUTE,
-        component: <HomePage>
+        component: HomePage
     },
     {
         path: FAVORITES_ROUTE,

@@ -17,11 +17,11 @@ import {
   SIGNUP_ROUTE,
 } from './variebles'
 
-interface PrivateRoutesType {
+export interface RoutesType {
   path: string
   component: ComponentType
 }
-export const publickRoutes = [
+export const publickRoutes: RoutesType[] = [
   {
     path: LOGIN_ROUTE,
     component: LoginPage,
@@ -39,7 +39,7 @@ export const publickRoutes = [
     component: ElementPage,
   },
 ]
-export const privateRoutes: PrivateRoutesType[] = [
+export const privateRoutes: RoutesType[] = [
   {
     path: HOME_ROUTE,
     component: HomePage,

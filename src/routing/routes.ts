@@ -1,11 +1,18 @@
-import { ComponentType } from 'react'
-import ElementPage from '../pages/ElementPage'
-import FavoritesPage from '../pages/FavoritesPage'
-import HistoryPage from '../pages/HistoryPage'
-import HomePage from '../pages/HomePage'
-import LoginPage from '../pages/LoginPage'
-import LogoutPage from '../pages/LogoutPage'
-import RegistrationPage from '../pages/RegistrationPage'
+import { ComponentType, lazy } from 'react'
+const ElementPage = lazy(() => import('../pages/ElementPage'))
+const FavoritesPage = lazy(() => import('../pages/FavoritesPage'))
+const HistoryPage = lazy(() => import('../pages/HistoryPage'))
+const HomePage = lazy(() => import('../pages/HomePage'))
+const LoginPage = lazy(() => import('../pages/LoginPage'))
+const LogoutPage = lazy(() => import('../pages/LogoutPage'))
+const RegistrationPage = lazy(() => import('../pages/RegistrationPage'))
+// const Home = lazy(() => import('./routes/Home'));
+// import FavoritesPage from '../pages/FavoritesPage'
+// import HistoryPage from '../pages/HistoryPage'
+// import HomePage from '../pages/HomePage'
+// import LoginPage from '../pages/LoginPage'
+// import LogoutPage from '../pages/LogoutPage'
+// import RegistrationPage from '../pages/RegistrationPage'
 import {
   ELEMENT_ROUTE,
   FAVORITES_ROUTE,

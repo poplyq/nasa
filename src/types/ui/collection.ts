@@ -1,6 +1,8 @@
 export interface CollectionResponse {
-  href: string
-  items: searchItem[]
+  collection: {
+    href: string
+    items: searchItem[]
+  }
 }
 
 export interface CollectionType {

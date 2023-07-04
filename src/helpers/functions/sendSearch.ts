@@ -6,6 +6,6 @@ export const sendSearch = async (email: string, search: string, title: string) =
   await addDoc(collection(db, `${email}`), {
     search,
     title,
-    createdAt: now,
+    createdAt: now.toString(),
   })
 }

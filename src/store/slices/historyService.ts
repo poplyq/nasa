@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { HistoryResponse } from '../../types/response/historyResponse'
 import { getSearch } from '../../helpers/functions/getSearch'
-import { stringify } from 'querystring'
 
 interface initialStateProps {
   history: HistoryResponse[] | []

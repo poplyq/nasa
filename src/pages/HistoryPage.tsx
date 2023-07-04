@@ -1,16 +1,18 @@
 import { useEffect } from 'react'
 import { getSearch } from '../helpers/functions/getSearch'
 import { useAppDispatch, useAppSelector } from '../store/store'
+import HistoryModule from '../modules/HistoryModule'
 
 const HistoryPage = () => {
+  const { user } = useAppSelector((state) => state.userState)
   const dispatch = useAppDispatch()
+
   useEffect(() => {
-    // ошибка Аргумент типа "AsyncThunkAction<HistoryResponse[], string, AsyncThunkConfig>" нельзя назначить параметру типа "AnyAction"
-    dispatch(getSearch('initial@gmail.com'))
-  }, [dispatch])
+    user && dispatch(getSearch({ email: user.email, request: 'search' }))
+  }, [dispatch, user])
   const { history } = useAppSelector((state) => state.historyState)
-  console.log(history)
-  return <div></div>
+
+  return <HistoryModule histories={history} />
 }
 
 export default HistoryPage

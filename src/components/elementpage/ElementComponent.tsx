@@ -1,12 +1,12 @@
 import React from 'react'
 import { Card } from '../../types/ui/collection'
 interface ElementProps {
-  cards: Card[]
+  cards: Card[] | undefined
 }
-const Element = ({ cards }: ElementProps) => {
+const ElementComponent = ({ cards }: ElementProps) => {
   return (
     <div>
-      {cards.map((card) => (
+      {cards?.map((card) => (
         <div key={card.id}>
           <img src={card.image} alt='' className='searchBlockImg' />
           <div className='searchBlockTitleContainer'>
@@ -21,4 +21,4 @@ const Element = ({ cards }: ElementProps) => {
   )
 }
 
-export default Element
+export default ElementComponent

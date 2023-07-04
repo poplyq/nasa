@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { dataApi } from './api/dataApi/dataApi'
 import userReducer from './slices/userSlice'
+import historyReducer from './slices/historyService'
 import { searchApi } from './api/searchApi/serchApi'
 
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
     [dataApi.reducerPath]: dataApi.reducer,
     [searchApi.reducerPath]: searchApi.reducer,
     userState: userReducer,
+    historyState: historyReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({}).concat([dataApi.middleware, searchApi.middleware]),

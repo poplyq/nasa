@@ -8,7 +8,6 @@ import { useAppSelector } from '../../../store/store'
 const User = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const { user } = useAppSelector((state) => state.userState)
-  console.log(user)
 
   return (
     <>

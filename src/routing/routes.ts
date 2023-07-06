@@ -39,6 +39,14 @@ export const publickRoutes: RoutesType[] = [
     path: ELEMENT_ROUTE,
     component: ElementPage,
   },
+  {
+    path: HOME_ROUTE,
+    component: HomePage,
+  },
+  {
+    path: '*',
+    component: LoginPage,
+  },
 ]
 export const privateRoutes: RoutesType[] = [
   {
@@ -60,5 +68,9 @@ export const privateRoutes: RoutesType[] = [
   {
     path: ELEMENT_ROUTE,
     component: ElementPage,
+  },
+  {
+    path: '*',
+    component: HomePage,
   },
 ]

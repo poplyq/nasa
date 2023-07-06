@@ -31,7 +31,7 @@ const GoogleLogin = () => {
   }
   return (
     <div>
-      <button className='GoogleLogInButton' onClick={handleClick}>
+      <button className='SubmitButton' onClick={handleClick}>
         Войти с гугл
       </button>
     </div>

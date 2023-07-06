@@ -1,4 +1,5 @@
 import React from 'react'
+import './inputs.scss'
 
 interface PasswordInputProps {
   password: string
@@ -13,7 +14,7 @@ function PasswordInput({ password, setPassword, placeholder }: PasswordInputProp
   return (
     <input
       type='password'
-      className=''
+      className='passwordInput'
       value={password}
       onChange={handleChange}
       placeholder={placeholder}

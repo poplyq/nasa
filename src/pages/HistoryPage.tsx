@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { getSearch } from '../helpers/functions/getSearch'
+import { getHistory } from '../helpers/actions/getHistory'
 import { useAppDispatch, useAppSelector } from '../store/store'
 import HistoryModule from '../modules/HistoryModule'
 
@@ -8,7 +8,7 @@ const HistoryPage = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    user && dispatch(getSearch({ email: user.email, request: 'search' }))
+    user && dispatch(getHistory(user.email))
   }, [dispatch, user])
   const { history } = useAppSelector((state) => state.historyState)
 

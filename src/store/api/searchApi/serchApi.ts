@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
-import { CollectionResponse, CollectionType } from '../../../types/ui/collection'
+import { Card, CollectionResponse, CollectionType } from '../../../types/ui/collection'
 
 export const searchApi = createApi({
   reducerPath: 'searchApi',
@@ -32,8 +32,26 @@ export const searchApi = createApi({
           }
         },
       }),
+      getCardSearch: build.query<Card, string | null>({
+        query(req) {
+          return {
+            url: `/search?q=${req}&page_size=1&media_type=image`,
+          }
+        },
+        transformResponse: (response: CollectionResponse): Card => {
+          return {
+            id: response.collection.items[0].data[0].nasa_id,
+            date: response.collection.items[0].data[0].date_created,
+            title: response.collection.items[0].data[0].title,
+            location: response.collection.items[0].data[0].location,
+            description: response.collection.items[0].data[0].description,
+            photographer: response.collection.items[0].data[0].photographer,
+            image: response.collection.items[0].links[0].href,
+          }
+        },
+      }),
     }
   },
 })
 
-export const { useGetDataSearchQuery } = searchApi
+export const { useGetDataSearchQuery, useGetCardSearchQuery } = searchApi

@@ -12,7 +12,7 @@ class History {
   }
 }
 
-export const historyConverter = {
+export const historyController = {
   toFirestore: (history: HistoryResponse): DocumentData => {
     return {
       search: history.search,
@@ -25,15 +25,4 @@ export const historyConverter = {
     return new History(data.search, data.createdAt, data.title)
   },
 }
-// const postSnap = await
-//   .firestore()
-//   .collection('posts')
-//   .withConverter(historyConverter)
-//   .doc()
-//   .get()
-// const post = postSnap.data()
-// if (post !== undefined) {
-//   post.title // string
-//   post.toString() // Should be defined
-//   post.someNonExistentProperty // TS error
-// }
+//пока не используется если не понадовиться удалим

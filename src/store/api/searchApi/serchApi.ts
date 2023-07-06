@@ -9,10 +9,12 @@ export const searchApi = createApi({
   tagTypes: ['Data'],
   endpoints: (build) => {
     return {
-      getDataSearch: build.query<CollectionType, string | null>({
+      getDataSearch: build.query<CollectionType, { value: string | null }>({
         query(req) {
+          const { value } = req
           return {
-            url: `/search?q=${req}&page_size=5&media_type=image`,
+            url: '/search',
+            params: { q: value, page_size: '5', media_type: 'image' },
           }
         },
         transformResponse: (response: CollectionResponse): CollectionType => {
@@ -32,10 +34,12 @@ export const searchApi = createApi({
           }
         },
       }),
-      getCardSearch: build.query<Card, string | null>({
+      getCardSearch: build.query<Card, { value: string | null }>({
         query(req) {
+          const { value } = req
           return {
-            url: `/search?q=${req}&page_size=1&media_type=image`,
+            url: '/search',
+            params: { q: value, page_size: '5', media_type: 'image' },
           }
         },
         transformResponse: (response: CollectionResponse): Card => {

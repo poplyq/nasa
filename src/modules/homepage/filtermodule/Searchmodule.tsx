@@ -7,7 +7,7 @@ const Searchmodule = () => {
   const [value, setValue] = useState<string>('')
   const newValue = useDebounce<string>(value, 1500)
   const [search, setSearch] = useState<string>('')
-  const { data } = useGetDataSearchQuery(search)
+  const { data } = useGetDataSearchQuery({ value: search })
   console.log(data)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

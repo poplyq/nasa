@@ -3,26 +3,26 @@ import { HistoryResponse } from '../../types/response/historyResponse'
 import { getHistory } from '../actions/getHistory'
 
 interface InitialStateProps {
-  history: HistoryResponse[] | []
+  favorites: HistoryResponse[] | []
   error: string
 }
 
 const initialState: InitialStateProps = {
-  history: [],
+  favorites: [],
   error: '',
 }
 
-export const historySlice = createSlice({
+export const favoritesSlice = createSlice({
   initialState,
   name: 'historySlice',
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getHistory.fulfilled, (state, { payload: history }) => {
-      if (history) {
-        state.history = history
+    builder.addCase(getHistory.fulfilled, (state, { payload: favorites }) => {
+      if (favorites) {
+        state.favorites = favorites
       }
     })
   },
 })
 
-export default historySlice.reducer
+export default favoritesSlice.reducer

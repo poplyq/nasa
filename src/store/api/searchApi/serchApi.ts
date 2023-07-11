@@ -39,7 +39,7 @@ export const searchApi = createApi({
           const { value } = req
           return {
             url: '/search',
-            params: { q: value, page_size: '5', media_type: 'image' },
+            params: { q: value, page_size: '1', media_type: 'image' },
           }
         },
         transformResponse: (response: CollectionResponse): Card => {

@@ -8,19 +8,19 @@ interface CardSearchProps {
 }
 const CardSearch = ({ card }: CardSearchProps) => {
   const dispatch = useAppDispatch()
-  const { favorites } = useAppSelector((state) => state.favoritesState)
+  const { favorite } = useAppSelector((state) => state.favoritesState)
   const [isFavorite, setIsFavorite] = useState<boolean>(false)
 
   useEffect(() => {
     dispatch(getIsFavorites(card.id))
   }, [card.id, dispatch])
   useEffect(() => {
-    if (favorites === card.id) {
+    if (favorite === card.id) {
       setIsFavorite(true)
     } else {
       setIsFavorite(false)
     }
-  }, [card.id, favorites])
+  }, [card.id, favorite])
 
   const handleClick = () => {
     dispatch(sendFavorite(card.id))

@@ -4,7 +4,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { RootState } from '../store'
 
 export const getIsFavorites = createAsyncThunk(
-  'user/getFavorites',
+  'user/getIsFavorites',
   async (id: string, { getState }) => {
     const state = getState() as RootState
     const q = query(

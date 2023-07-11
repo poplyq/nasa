@@ -1,5 +1,6 @@
 import React from 'react'
 import { validateEmail } from '../../../helpers/functions/validateEmail'
+import './inputs.scss'
 
 interface EmailInputProps {
   setEmail(arg: string): void
@@ -16,12 +17,12 @@ function EmailInput({ setEmail, email, setIsValid }: EmailInputProps) {
   }
   return (
     <input
-      className=''
+      className='emailInput'
       type='email'
       value={email}
       onChange={handleChange}
       onBlur={validateForm}
-      placeholder='Введите email'
+      placeholder='Enter email'
     />
   )
 }

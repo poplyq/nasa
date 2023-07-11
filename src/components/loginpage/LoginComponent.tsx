@@ -7,6 +7,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 import { makeUserResponse } from '../../helpers/functions/makeUserResponse'
 import { setUser } from '../../store/slices/userSlice'
 import { useDispatch } from 'react-redux'
+import './login.scss'
 
 import { Context } from '../../helpers/context'
 
@@ -25,15 +26,15 @@ const LoginComponent = () => {
   }
   return (
     <div className='loginContainer'>
-      <h3 className=''>Войти</h3>
-      <p className=''> Почта</p>
+      <h3 className='title'>Login</h3>
+      <p className='label'> Email</p>
       <EmailInput setEmail={setEmail} email={email} setIsValid={setIsValid} />
-      <p className='loginPassword'>Пароль</p>
+      <p className='label'>Password</p>
       <PasswordInput setPassword={setPassword} password={password} placeholder='Введите пароль' />
       <ButtonSubmit
         handleClick={loginUser}
         value={{ email, password } as loginRequest}
-        name='Войти'
+        name='Log in'
         isValid={isValid}
         link='/home'
       />

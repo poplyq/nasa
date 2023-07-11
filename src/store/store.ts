@@ -5,6 +5,7 @@ import userReducer from './slices/userSlice'
 import historyReducer from './slices/historyService'
 import favoritesReducer from './slices/favoriteService'
 import { searchApi } from './api/searchApi/serchApi'
+import { logger } from './middleware/logger'
 
 export const store = configureStore({
   reducer: {
@@ -15,7 +16,7 @@ export const store = configureStore({
     favoritesState: favoritesReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({}).concat([dataApi.middleware, searchApi.middleware]),
+    getDefaultMiddleware({}).concat([dataApi.middleware, searchApi.middleware, logger]),
 })
 
 export type RootState = ReturnType<typeof store.getState>

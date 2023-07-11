@@ -1,5 +1,5 @@
 import { ComponentType, lazy } from 'react'
-const ElementPage = lazy(() => import('../pages/ElementPage'))
+const SearchPage = lazy(() => import('../pages/SearchPage'))
 const FavoritesPage = lazy(() => import('../pages/FavoritesPage'))
 const HistoryPage = lazy(() => import('../pages/HistoryPage'))
 const HomePage = lazy(() => import('../pages/HomePage'))
@@ -37,7 +37,7 @@ export const publickRoutes: RoutesType[] = [
   },
   {
     path: ELEMENT_ROUTE,
-    component: ElementPage,
+    component: SearchPage,
   },
   {
     path: HOME_ROUTE,
@@ -67,7 +67,7 @@ export const privateRoutes: RoutesType[] = [
   },
   {
     path: ELEMENT_ROUTE,
-    component: ElementPage,
+    component: SearchPage,
   },
   {
     path: '*',

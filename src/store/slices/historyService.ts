@@ -1,13 +1,13 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { HistoryResponse } from '../../types/response/historyResponse'
-import { getSearch } from '../../helpers/functions/getSearch'
+import { getHistory } from '../actions/getHistory'
 
-interface initialStateProps {
+interface InitialStateProps {
   history: HistoryResponse[] | []
   error: string
 }
 
-const initialState: initialStateProps = {
+const initialState: InitialStateProps = {
   history: [],
   error: '',
 }
@@ -15,18 +15,9 @@ const initialState: initialStateProps = {
 export const historySlice = createSlice({
   initialState,
   name: 'historySlice',
-  reducers: {
-    addHistory: (state, action: PayloadAction<HistoryResponse>) => {
-      state.history = [...state.history, action.payload]
-      state.error = ''
-    },
-    error(state, action: PayloadAction<string>) {
-      state.error = action.payload
-    },
-    clearHistory: () => initialState,
-  },
+  reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getSearch.fulfilled, (state, { payload: history }) => {
+    builder.addCase(getHistory.fulfilled, (state, { payload: history }) => {
       if (history) {
         state.history = history
       }
@@ -35,5 +26,3 @@ export const historySlice = createSlice({
 })
 
 export default historySlice.reducer
-
-export const { addHistory, error, clearHistory } = historySlice.actions

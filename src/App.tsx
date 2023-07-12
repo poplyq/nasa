@@ -4,8 +4,10 @@ import User from './components/header/authuser/User'
 import AppRouter from './routing/AppRouter'
 import { Suspense } from 'react'
 import Loader from './pages/Loader'
+import { useRelogin } from './helpers/hooks/useRelogin'
 
-function App() {
+export default function App() {
+  useRelogin()
   return (
     <div className='App'>
       <Header user={<User />} />
@@ -15,5 +17,3 @@ function App() {
     </div>
   )
 }
-
-export default App

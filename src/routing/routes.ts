@@ -1,18 +1,12 @@
 import { ComponentType, lazy } from 'react'
-const ElementPage = lazy(() => import('../pages/ElementPage'))
+const SearchPage = lazy(() => import('../pages/SearchPage'))
 const FavoritesPage = lazy(() => import('../pages/FavoritesPage'))
 const HistoryPage = lazy(() => import('../pages/HistoryPage'))
 const HomePage = lazy(() => import('../pages/HomePage'))
 const LoginPage = lazy(() => import('../pages/LoginPage'))
 const LogoutPage = lazy(() => import('../pages/LogoutPage'))
 const RegistrationPage = lazy(() => import('../pages/RegistrationPage'))
-// const Home = lazy(() => import('./routes/Home'));
-// import FavoritesPage from '../pages/FavoritesPage'
-// import HistoryPage from '../pages/HistoryPage'
-// import HomePage from '../pages/HomePage'
-// import LoginPage from '../pages/LoginPage'
-// import LogoutPage from '../pages/LogoutPage'
-// import RegistrationPage from '../pages/RegistrationPage'
+
 import {
   ELEMENT_ROUTE,
   FAVORITES_ROUTE,
@@ -43,7 +37,15 @@ export const publickRoutes: RoutesType[] = [
   },
   {
     path: ELEMENT_ROUTE,
-    component: ElementPage,
+    component: SearchPage,
+  },
+  {
+    path: HOME_ROUTE,
+    component: HomePage,
+  },
+  {
+    path: '*',
+    component: LoginPage,
   },
 ]
 export const privateRoutes: RoutesType[] = [
@@ -62,5 +64,13 @@ export const privateRoutes: RoutesType[] = [
   {
     path: LOGOUT_ROUTE,
     component: LogoutPage,
+  },
+  {
+    path: ELEMENT_ROUTE,
+    component: SearchPage,
+  },
+  {
+    path: '*',
+    component: HomePage,
   },
 ]

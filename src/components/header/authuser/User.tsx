@@ -4,14 +4,24 @@ import userIcon from '../../../assets/header/user.png'
 import AuthBlock from '../unauthuser/AuthBlock'
 import UnAuthBlock from '../unauthuser/UnAuthBlock'
 import { useAppSelector } from '../../../store/store'
+import './user.scss'
 
 const User = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const { user } = useAppSelector((state) => state.userState)
+  const closeWindow = () => {
+    setIsOpen(false)
+  }
   return (
     <>
       <ToggleImage isOpen={isOpen} setIsOpen={setIsOpen} imgUrl={userIcon} />
-      {isOpen && (user ? <AuthBlock user={user} /> : <UnAuthBlock />)}
+      {isOpen &&
+        (user ? (
+          <AuthBlock user={user} closeWindow={closeWindow} />
+        ) : (
+          <UnAuthBlock closeWindow={closeWindow} />
+        ))}
+      {isOpen && <div className='userBarWrapper' onClick={() => setIsOpen(false)}></div>}
     </>
   )
 }

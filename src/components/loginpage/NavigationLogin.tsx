@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const NavigationLogin = () => {
   return (
-    <div>
+    <div className='linkContainer'>
       <Link className='loginLink' to='/passrecover'>
         Забыл пароль? Жми напомним
       </Link>

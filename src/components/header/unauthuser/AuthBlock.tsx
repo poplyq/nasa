@@ -5,14 +5,21 @@ import './authblock.scss'
 
 interface AuthBlockProps {
   user: IUser
+  closeWindow(arg: void): void
 }
-const AuthBlock = ({ user }: AuthBlockProps) => {
+const AuthBlock = ({ user, closeWindow }: AuthBlockProps) => {
   return (
     <div className='authBlock'>
       <p>{user.email}</p>
-      <Link to={'/favorites'}>Избранное</Link>
-      <Link to={'/history'}>История</Link>
-      <Link to={'/logout'}> Выйти из учетной записи</Link>
+      <Link to={'/favorites'} onClick={() => closeWindow()}>
+        Избранное
+      </Link>
+      <Link to={'/history'} onClick={() => closeWindow()}>
+        История
+      </Link>
+      <Link to={'/logout'} onClick={() => closeWindow()}>
+        Выйти из учетной записи
+      </Link>
     </div>
   )
 }

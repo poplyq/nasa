@@ -54,7 +54,7 @@ const SignUp = () => {
           type='submit'
           disabled={!(isEmailValid && isPassValid && isPassConValid && !Boolean(errorMessage))}
         >
-          Sugn up
+          Sign up
         </button>
       </form>
       <GoogleLogin />

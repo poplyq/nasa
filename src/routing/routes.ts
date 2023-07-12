@@ -1,11 +1,11 @@
 import { ComponentType, lazy } from 'react'
-const SearchPage = lazy(() => import('../pages/SearchPage'))
-const FavoritesPage = lazy(() => import('../pages/FavoritesPage'))
-const HistoryPage = lazy(() => import('../pages/HistoryPage'))
-const HomePage = lazy(() => import('../pages/HomePage'))
-const LoginPage = lazy(() => import('../pages/LoginPage'))
-const LogoutPage = lazy(() => import('../pages/LogoutPage'))
-const RegistrationPage = lazy(() => import('../pages/RegistrationPage'))
+const SearchPage = lazy(() => import('../pages/Searchpage/SearchPage'))
+const FavoritesPage = lazy(() => import('../pages/Favoritepage/FavoritesPage'))
+const HistoryPage = lazy(() => import('../pages/Historypage/HistoryPage'))
+const HomePage = lazy(() => import('../pages/Homepage/HomePage'))
+const LoginPage = lazy(() => import('../pages/Loginpage/LoginPage'))
+const LogoutPage = lazy(() => import('../pages/Logoutpage/LogoutPage'))
+const RegistrationPage = lazy(() => import('../pages/Registrationpage/RegistrationPage'))
 
 import {
   ELEMENT_ROUTE,

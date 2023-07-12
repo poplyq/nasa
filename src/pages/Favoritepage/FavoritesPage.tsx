@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { getFavorites } from '../store/actions/getFavorites'
-import { useAppDispatch, useAppSelector } from '../store/store'
-import FavoriteCard from '../modules/favoritespage/FavoriteCard'
+import { getFavorites } from '../../store/actions/getFavorites'
+import { useAppDispatch, useAppSelector } from '../../store/store'
+import FavoriteCard from '../../modules/favoritespage/FavoriteCard'
 import './favorite.scss'
 
 const FavoritesPage = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
-import Loader from './Loader'
-import { useLogout } from '../helpers/hooks/useLogout'
+import Loader from '../../modules/loader/Loader'
+import { useLogout } from '../../helpers/hooks/useLogout'
 
 const LogoutPage = () => {
   useLogout()

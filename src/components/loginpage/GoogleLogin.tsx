@@ -20,13 +20,8 @@ const GoogleLogin = () => {
           user.email && token && dispatch(setUser({ email: user.email, accessToken: token }))
           navigate('/home')
         })
-        .catch((error) => {
-          dispatch(errorUser(error))
-          //пригодится потом
-          // const errorCode = error.code;
-          // const errorMessage = error.message;
-          // const email = error.customData.email;
-          // const credential = GoogleAuthProvider.credentialFromError(error);
+        .catch(() => {
+          dispatch(errorUser('Не удалось войти'))
         })
   }
   return (

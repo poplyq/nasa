@@ -1,6 +1,6 @@
 import React from 'react'
 import { useGetCardSearchQuery } from '../../store/api/searchApi/searchApi'
-import Loader from '../../pages/Loader'
+import Loader from '../loader/Loader'
 import CardFavorite from '../../components/favoritespage/CardFavorite'
 interface FavoriteCardProps {
   id: string

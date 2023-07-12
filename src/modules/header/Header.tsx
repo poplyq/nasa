@@ -2,10 +2,9 @@ import React, { ReactNode } from 'react'
 import logo from '../../assets/header/logo.svg'
 import './header.scss'
 import LinkImg from '../../components/common/images/LinkImg'
-import Searchmodule from '../homepage/filtermodule/Searchmodule'
+import Searchmodule from '../homepage/searchmodule/Searchmodule'
 
 interface HeaderProps {
-  settings?: ReactNode
   user: ReactNode
 }
 

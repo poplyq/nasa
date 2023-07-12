@@ -16,8 +16,6 @@ const CardSearch = ({ card }: CardSearchProps) => {
     dispatch(getIsFavorites(card.id))
   }, [card.id, dispatch])
   useEffect(() => {
-    console.log(favorite)
-
     if (favorite === card.id) {
       setIsFavorite(true)
     } else {

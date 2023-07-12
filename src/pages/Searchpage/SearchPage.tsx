@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { useGetCardSearchQuery } from '../store/api/searchApi/searchApi'
-import CardSearch from '../components/searchpage/CardSearch'
-import Loader from './Loader'
+import { useGetCardSearchQuery } from '../../store/api/searchApi/searchApi'
+import CardSearch from '../../components/searchpage/CardSearch'
+import Loader from '../../modules/loader/Loader'
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams()

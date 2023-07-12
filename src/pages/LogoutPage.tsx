@@ -1,7 +1,10 @@
 import React from 'react'
+import Loader from './Loader'
+import { useLogout } from '../helpers/hooks/useLogout'
 
 const LogoutPage = () => {
-  return <div></div>
+  useLogout()
+  return <Loader />
 }
 
 export default LogoutPage

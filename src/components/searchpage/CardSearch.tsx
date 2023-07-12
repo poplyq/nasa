@@ -10,11 +10,14 @@ const CardSearch = ({ card }: CardSearchProps) => {
   const dispatch = useAppDispatch()
   const { favorite } = useAppSelector((state) => state.favoritesState)
   const [isFavorite, setIsFavorite] = useState<boolean>(false)
+  const { user } = useAppSelector((state) => state.userState)
 
   useEffect(() => {
     dispatch(getIsFavorites(card.id))
   }, [card.id, dispatch])
   useEffect(() => {
+    console.log(favorite)
+
     if (favorite === card.id) {
       setIsFavorite(true)
     } else {
@@ -34,7 +37,8 @@ const CardSearch = ({ card }: CardSearchProps) => {
         <p>{card.location}</p>
         <p>{card.date}</p>
         <p>{card.description}</p>
-        {isFavorite ? <p> В избранном</p> : <button onClick={handleClick}>В избранное</button>}
+        {user &&
+          (isFavorite ? <p> В избранном</p> : <button onClick={handleClick}>В избранное</button>)}
       </div>
     </div>
   )

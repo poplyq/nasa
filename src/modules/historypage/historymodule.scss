@@ -1,0 +1,10 @@
+.historyModule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  max-height: 93vh;
+  overflow: auto;
+  background-color: #f9f7ec;
+}

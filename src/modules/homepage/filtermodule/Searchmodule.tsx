@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useGetDataSearchQuery } from '../../../store/api/searchApi/serchApi'
 import { useDebounce } from './useDebounce'
 import SearchComponent from '../../../components/homepage/workplace/searchContainer/SearchComponent'
+import './searchmodule.scss'
+import logo from './search.png'
 
 const Searchmodule = () => {
   const [value, setValue] = useState<string>('')
-  const newValue = useDebounce<string>(value, 1500)
+  const newValue = useDebounce<string>(value, 500)
   const [search, setSearch] = useState<string>('')
   const { data } = useGetDataSearchQuery({ value: search })
-  console.log(data)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
@@ -19,9 +20,10 @@ const Searchmodule = () => {
   }, [newValue])
 
   return (
-    <div>
-      <input type='text' value={value} onChange={handleChange} />
-      {data?.cards && <SearchComponent data={data} />}
+    <div className='searchModule'>
+      <input type='text' value={value} onChange={handleChange} className='input' />
+      <img className='img' src={logo} />
+      {search && data?.cards && <SearchComponent data={data} setValue={setValue} />}
     </div>
   )
 }

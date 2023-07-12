@@ -1,16 +1,17 @@
 import React from 'react'
 import { validateEmail } from '../../../helpers/functions/validateEmail'
 import './inputs.scss'
+import PropTypes from 'prop-types'
 
 interface EmailInputProps {
   setEmail(arg: string): void
-  email: string | undefined
+  email: string
   setIsValid(arg: boolean): void
 }
 
 function EmailInput({ setEmail, email, setIsValid }: EmailInputProps) {
   const validateForm = () => {
-    email && setIsValid(validateEmail(email))
+    setIsValid(validateEmail(email))
   }
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setEmail(e.currentTarget.value)
@@ -28,3 +29,9 @@ function EmailInput({ setEmail, email, setIsValid }: EmailInputProps) {
 }
 
 export default EmailInput
+
+EmailInput.propTypes = {
+  email: PropTypes.string,
+  setEmail: PropTypes.func,
+  setIsValid: PropTypes.func,
+}

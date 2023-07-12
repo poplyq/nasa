@@ -1,15 +1,15 @@
 import { useEffect } from 'react'
 import { getHistory } from '../store/actions/getHistory'
 import { useAppDispatch, useAppSelector } from '../store/store'
-import HistoryModule from '../modules/HistoryModule'
+import HistoryModule from '../modules/historypage/HistoryModule'
 
 const HistoryPage = () => {
+  const { history } = useAppSelector((state) => state.historyState)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
     dispatch(getHistory())
   }, [dispatch])
-  const { history } = useAppSelector((state) => state.historyState)
 
   return <HistoryModule histories={history} />
 }

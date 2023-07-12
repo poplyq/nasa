@@ -25,4 +25,3 @@ export const historyController = {
     return new History(data.search, data.createdAt, data.title)
   },
 }
-//пока не используется если не понадовиться удалим

@@ -6,7 +6,7 @@ interface HistoryBlockProps {
 }
 const HistoryBlock = ({ history }: HistoryBlockProps) => {
   return (
-    <Link to={`/element?serch=${history.search}`}>
+    <Link to={`/search?serch=${history.search}`}>
       {history.title} created at {history.createdAt}
     </Link>
   )

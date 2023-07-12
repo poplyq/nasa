@@ -4,12 +4,13 @@ import SearchBlock from './SearchBlock'
 import './searchcontainer.scss'
 interface SearchComponentProps {
   data: CollectionType
+  setValue(arg: string): void
 }
-const SearchComponent = ({ data }: SearchComponentProps) => {
+const SearchComponent = ({ data, setValue }: SearchComponentProps) => {
   return (
     <div className='searchComponentContainer'>
       {data.cards.map((card) => (
-        <SearchBlock card={card} key={card.id} />
+        <SearchBlock card={card} key={card.id} setValue={setValue} />
       ))}
     </div>
   )

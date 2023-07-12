@@ -1,16 +1,22 @@
 .searchComponentContainer {
-  width: 800px;
-  margin: 20px auto;
+  width: 490px;
   border: 1px black solid;
-  max-height: 90vh;
+  max-height: 60vh;
   overflow: auto;
+  position: relative;
+  z-index: 50;
+  background-color: #fff;
+  padding: 10px;
   .searchBlock {
     margin-top: 15px;
     display: flex;
-    justify-content: space-between;
-
+    justify-content: flex-start;
+    max-height: 40px;
+    border: 1px black solid;
+    padding: 3px;
+    cursor: pointer;
     .searchBlockImg {
-      width: 30%;
+      max-width: 60px;
     }
     .searchBlockTitleContainer {
       margin-left: 10px;
@@ -19,5 +25,8 @@
       width: 70%;
       align-items: flex-start;
     }
+  }
+  .searchBlock:hover{
+    transform: scale(1.01);
   }
 }

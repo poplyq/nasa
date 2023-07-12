@@ -1,4 +1,4 @@
-Приложение для поиска фильмов: [https://leafy-liger-e242c7.netlify.app/](https://poplyq-nasa.netlify.app/)
+Приложение для поиска фотографий в базе Nasa: [https://leafy-liger-e242c7.netlify.app/](https://poplyq-nasa.netlify.app/)
 
 Реализованы следующие требования к функциональности:
 

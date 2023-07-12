@@ -15,8 +15,6 @@ function PasswordInput({ password, setPassword, placeholder, setIsValid }: Passw
     setPassword(e.currentTarget.value)
   }
   const validateForm = () => {
-    console.log(validatePassword(password))
-
     password && setIsValid(validatePassword(password))
   }
   return (

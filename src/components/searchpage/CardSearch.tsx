@@ -3,6 +3,7 @@ import { Card } from '../../types/ui/collection'
 import { getIsFavorites } from '../../store/actions/getIsFavorites'
 import { useAppDispatch, useAppSelector } from '../../store/store'
 import { sendFavorite } from '../../store/actions/sendFavorite'
+import './cardsearch.scss'
 
 interface CardSearchProps {
   card: Card
@@ -32,15 +33,21 @@ const CardSearch = ({ card }: CardSearchProps) => {
   }
 
   return (
-    <div>
-      <img src={card.image} alt='' className='searchBlockImg' />
-      <div className='searchBlockTitleContainer'>
+    <div className='cardSearchContainer'>
+      <img src={card.image} alt='' className='img' />
+      <div className='container'>
         <p>{card.title}</p>
         <p>{card.location}</p>
         <p>{card.date}</p>
         <p>{card.description}</p>
         {user &&
-          (isFavorite ? <p> В избранном</p> : <button onClick={handleClick}>В избранное</button>)}
+          (isFavorite ? (
+            <span className='span'> В избранном</span>
+          ) : (
+            <button onClick={handleClick} className='button'>
+              В избранное
+            </button>
+          ))}
       </div>
     </div>
   )

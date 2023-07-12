@@ -1,16 +1,29 @@
-.cardFavoriteContainer {
+.cardFavorite {
   width: 40%;
-  text-decoration: none;
-  color: black;
+  .cardFavoriteContainer {
+    text-decoration: none;
+    color: black;
 
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  .img {
-    width: 50%;
-    height: 20vh;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    .img {
+      width: 50%;
+      height: 20vh;
+    }
+    .container {
+      width: 50%;
+    }
   }
-  .container {
-    width: 50%;
-  }
+  .button {
+   width: 180px;
+   height: 25px;
+   background-color: #fff;
+   border: 1px rgb(232, 203, 166) solid;
+   border-radius: 5px;
+   margin-top: 10px;
+   text-align: center;
+   padding-top: 2px;
+   cursor: pointer;
+ }
 }

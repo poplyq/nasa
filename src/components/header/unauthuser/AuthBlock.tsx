@@ -11,13 +11,13 @@ const AuthBlock = ({ user, closeWindow }: AuthBlockProps) => {
   return (
     <div className='authBlock'>
       <p>{user.email}</p>
-      <Link to={'/favorites'} onClick={() => closeWindow()}>
+      <Link to={'/favorites'} className='linkButton' onClick={() => closeWindow()}>
         Избранное
       </Link>
-      <Link to={'/history'} onClick={() => closeWindow()}>
+      <Link to={'/history'} className='linkButton' onClick={() => closeWindow()}>
         История
       </Link>
-      <Link to={'/logout'} onClick={() => closeWindow()}>
+      <Link to={'/logout'} className='linkButton' onClick={() => closeWindow()}>
         Выйти из учетной записи
       </Link>
     </div>

@@ -3,11 +3,13 @@ import { Card } from '../../types/ui/collection'
 import { getIsFavorites } from '../../store/actions/getIsFavorites'
 import { useAppDispatch, useAppSelector } from '../../store/store'
 import { sendFavorite } from '../../store/actions/sendFavorite'
+
 interface CardSearchProps {
   card: Card
 }
 const CardSearch = ({ card }: CardSearchProps) => {
   const dispatch = useAppDispatch()
+
   const { favorite } = useAppSelector((state) => state.favoritesState)
   const [isFavorite, setIsFavorite] = useState<boolean>(false)
   const { user } = useAppSelector((state) => state.userState)
@@ -15,6 +17,7 @@ const CardSearch = ({ card }: CardSearchProps) => {
   useEffect(() => {
     dispatch(getIsFavorites(card.id))
   }, [card.id, dispatch])
+
   useEffect(() => {
     if (favorite === card.id) {
       setIsFavorite(true)
@@ -27,6 +30,7 @@ const CardSearch = ({ card }: CardSearchProps) => {
     dispatch(sendFavorite(card.id))
     setIsFavorite(true)
   }
+
   return (
     <div>
       <img src={card.image} alt='' className='searchBlockImg' />

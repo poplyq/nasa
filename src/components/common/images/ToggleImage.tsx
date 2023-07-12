@@ -9,6 +9,7 @@ function ToggleImage({ isOpen, setIsOpen, imgUrl }: ToggleImageProps) {
   const handleClick = () => {
     isOpen ? setIsOpen(false) : setIsOpen(true)
   }
+
   return <img className='toogleImage' src={imgUrl} onClick={handleClick} />
 }
 

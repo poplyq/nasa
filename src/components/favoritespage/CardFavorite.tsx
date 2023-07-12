@@ -4,6 +4,7 @@ import { Card } from '../../types/ui/collection'
 import { deleteFavorites } from '../../store/actions/deleteFavorite'
 import './cardfavorite.scss'
 import { Link } from 'react-router-dom'
+
 interface CardFavoriteProps {
   card: Card
 }
@@ -13,6 +14,7 @@ const CardFavorite = ({ card }: CardFavoriteProps) => {
   const handleClick = () => {
     dispatch(deleteFavorites(card.id))
   }
+
   return (
     <Link to={`/search?serch=${card.id}`} className='cardFavoriteContainer'>
       <img src={card.image} alt='' className='img' />

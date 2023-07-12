@@ -12,6 +12,7 @@ import { SnackBar } from '../common/snackbar/SnackBar'
 const SignUp = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false)
@@ -28,9 +29,11 @@ const SignUp = () => {
       .then((user) => dispatch(setUser(user)))
       .then(() => navigate('/home'))
   }
+
   useEffect(() => {
     password === confirmPass ? setErrorMessage('') : setErrorMessage('Пароли не совпадают')
   }, [confirmPass, password])
+
   return (
     <div className='loginContainer'>
       <h3 className=''>Регистрация</h3>

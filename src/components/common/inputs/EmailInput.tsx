@@ -13,9 +13,11 @@ function EmailInput({ setEmail, email, setIsValid }: EmailInputProps) {
   const validateForm = () => {
     setIsValid(validateEmail(email))
   }
+
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setEmail(e.currentTarget.value)
   }
+
   return (
     <input
       className='emailInput'

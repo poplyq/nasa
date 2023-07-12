@@ -9,9 +9,11 @@ import './user.scss'
 const User = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const { user } = useAppSelector((state) => state.userState)
+
   const closeWindow = () => {
     setIsOpen(false)
   }
+
   return (
     <>
       <ToggleImage isOpen={isOpen} setIsOpen={setIsOpen} imgUrl={userIcon} />

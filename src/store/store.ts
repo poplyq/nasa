@@ -4,8 +4,8 @@ import { dataApi } from './api/dataApi/dataApi'
 import userReducer from './slices/userSlice'
 import historyReducer from './slices/historyService'
 import favoritesReducer from './slices/favoriteService'
-import { searchApi } from './api/searchApi/serchApi'
 import { logger } from './middleware/logger'
+import { searchApi } from './api/searchApi/searchApi'
 
 export const store = configureStore({
   reducer: {

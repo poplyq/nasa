@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useGetDataSearchQuery } from '../../../store/api/searchApi/serchApi'
 import { useDebounce } from './useDebounce'
 import SearchComponent from '../../../components/homepage/workplace/searchContainer/SearchComponent'
+import { useGetDataSearchQuery } from '../../../store/api/searchApi/searchApi'
 import './searchmodule.scss'
 import logo from './search.png'
 

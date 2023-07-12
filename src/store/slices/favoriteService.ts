@@ -6,7 +6,6 @@ import { FavoritesResponse } from '../../types/response/favoritesresponse'
 import { deleteFavorites } from '../actions/deleteFavorite'
 
 interface InitialStateProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   favorite: string | null
   favorites: FavoritesResponse[] | null
   error: string

@@ -1,7 +1,7 @@
 export interface CollectionResponse {
   collection: {
     href: string
-    items: searchItem[]
+    items: SearchItem[]
   }
 }
 
@@ -10,12 +10,12 @@ export interface CollectionType {
   cards: Card[]
 }
 
-export interface searchItem {
-  data: searchPhotoInfo[]
+export interface SearchItem {
+  data: SearchPhotoInfo[]
   links: { href: string }[]
 }
 
-export interface searchPhotoInfo {
+export interface SearchPhotoInfo {
   date_created: string
   description: string
   location: string

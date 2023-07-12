@@ -11,7 +11,6 @@ export const getFavorites = createAsyncThunk('user/getFavorites', async (_arg, {
     where('email', '==', `${state.userState.user?.email}`),
   )
   const querySnapshot = await getDocs(q)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let newarr: FavoritesResponse[] = []
   querySnapshot.forEach((doc) => {
     newarr = [

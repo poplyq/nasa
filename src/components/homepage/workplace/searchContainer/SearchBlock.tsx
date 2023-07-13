@@ -2,18 +2,20 @@ import React from 'react'
 import { Card } from '../../../../types/ui/collection'
 import './searchcontainer.scss'
 import { useNavigate } from 'react-router-dom'
-import { useAppSelector } from '../../../../store/store'
+
 import { sendSearch } from '../../../../helpers/functions/sendSearch'
+import { getStateUser } from '../../../../store/selectors/selectors'
+import { useSelector } from 'react-redux'
 
 interface SearchBlockProps {
   card: Card
   setValue(arg: string): void
 }
 function SearchBlock({ card, setValue }: SearchBlockProps) {
-  const { user } = useAppSelector((state) => state.userState)
+  const user = useSelector(getStateUser)
   const navigate = useNavigate()
   const handleClick = () => {
-    navigate(`/search?search=${card.id}`)
+    navigate(`/card?card=${card.id}`)
     setValue('')
     user && sendSearch(user.email, card.id, card.title)
   }

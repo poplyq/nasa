@@ -1,17 +1,16 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useGetCardSearchQuery } from '../../store/api/searchApi/searchApi'
-import CardSearch from '../../components/searchpage/CardSearch'
 import Loader from '../../modules/loader/Loader'
+import CardBlock from '../../components/cardpage/CardBlock'
 
-const CardPage = () => {
+const CardUnAuthPage = () => {
   const [searchParams] = useSearchParams()
-  const { data, isSuccess } = useGetCardSearchQuery({ value: searchParams.get('search') })
+  const { data: card, isSuccess } = useGetCardSearchQuery({ value: searchParams.get('card') })
   if (isSuccess) {
-    return <CardSearch card={data} />
+    return <CardBlock card={card[0]} />
   } else {
     return <Loader />
   }
 }
-
-export default CardPage
+export default CardUnAuthPage

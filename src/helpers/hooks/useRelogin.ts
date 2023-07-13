@@ -10,11 +10,12 @@ export const useRelogin = () => {
 
   useEffect(() => {
     if (auth) {
-      onAuthStateChanged(auth, (user) => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (user?.email) {
-          dispatch(setUser({ email: user.email, accessToken: user.refreshToken }))
+          dispatch(setUser({ email: user.email }))
         }
       })
+      return unsubscribe
     }
   }, [auth, dispatch])
 }

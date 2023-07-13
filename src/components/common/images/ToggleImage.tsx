@@ -7,7 +7,7 @@ interface ToggleImageProps {
 
 function ToggleImage({ isOpen, setIsOpen, imgUrl }: ToggleImageProps) {
   const handleClick = () => {
-    isOpen ? setIsOpen(false) : setIsOpen(true)
+    setIsOpen(!isOpen)
   }
 
   return <img className='toogleImage' src={imgUrl} onClick={handleClick} />

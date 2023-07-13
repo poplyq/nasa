@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppDispatch } from '../../store/store'
 import { Card } from '../../types/ui/collection'
-import { deleteFavorites } from '../../store/actions/deleteFavorite'
+import { deleteFavorite } from '../../store/actions/deleteFavorite'
 import './cardfavorite.scss'
 import { Link } from 'react-router-dom'
 
@@ -12,12 +12,12 @@ const CardFavorite = ({ card }: CardFavoriteProps) => {
   const dispatch = useAppDispatch()
 
   const handleClick = () => {
-    dispatch(deleteFavorites(card.id))
+    dispatch(deleteFavorite(card.id))
   }
 
   return (
     <div className='cardFavorite'>
-      <Link to={`/search?serch=${card.id}`} className='cardFavoriteContainer'>
+      <Link to={`/card?card=${card.id}`} className='cardFavoriteContainer'>
         <img src={card.image} alt='' className='img' />
         <div className='container'>
           <p>{card.title}</p>

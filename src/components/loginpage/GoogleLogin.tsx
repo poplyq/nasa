@@ -7,17 +7,17 @@ import { useNavigate } from 'react-router-dom'
 
 const GoogleLogin = () => {
   const auth = useContext(Context)
+  const provider = new GoogleAuthProvider()
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const handleClick = () => {
-    const provider = new GoogleAuthProvider()
     auth &&
       signInWithPopup(auth, provider)
         .then((result) => {
           const credential = GoogleAuthProvider.credentialFromResult(result)
           const token = credential?.accessToken
           const user = result.user
-          user.email && token && dispatch(setUser({ email: user.email, accessToken: token }))
+          user.email && token && dispatch(setUser({ email: user.email }))
           navigate('/home')
         })
         .catch(() => {

@@ -1,6 +1,6 @@
 import { ComponentType, lazy } from 'react'
-const SearchPage = lazy(() => import('../pages/Searchpage/SearchPage'))
-const CardPage = lazy(() => import('../pages/Cardpage/CardPage'))
+const CardUnAuthPage = lazy(() => import('../pages/Cardpage/CardUnAuthPage'))
+const CardAuthPage = lazy(() => import('../pages/Cardpage/CardAuthPage'))
 const FavoritesPage = lazy(() => import('../pages/Favoritepage/FavoritesPage'))
 const HistoryPage = lazy(() => import('../pages/Historypage/HistoryPage'))
 const HomePage = lazy(() => import('../pages/Homepage/HomePage'))
@@ -9,7 +9,7 @@ const LogoutPage = lazy(() => import('../pages/Logoutpage/LogoutPage'))
 const RegistrationPage = lazy(() => import('../pages/Registrationpage/RegistrationPage'))
 
 import {
-  ELEMENT_ROUTE,
+  CARD_ROUTE,
   FAVORITES_ROUTE,
   HISTORY_ROUTE,
   HOME_ROUTE,
@@ -37,8 +37,8 @@ export const publickRoutes: RoutesType[] = [
     component: LoginPage,
   },
   {
-    path: ELEMENT_ROUTE,
-    component: SearchPage,
+    path: CARD_ROUTE,
+    component: CardUnAuthPage,
   },
   {
     path: HOME_ROUTE,
@@ -67,8 +67,8 @@ export const privateRoutes: RoutesType[] = [
     component: LogoutPage,
   },
   {
-    path: ELEMENT_ROUTE,
-    component: CardPage,
+    path: CARD_ROUTE,
+    component: CardAuthPage,
   },
   {
     path: '*',

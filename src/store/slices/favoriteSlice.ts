@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getIsFavorites } from '../actions/getIsFavorites'
-import { sendFavorite } from '../actions/sendFavorite'
 import { getFavorites } from '../actions/getFavorites'
 import { FavoritesResponse } from '../../types/response/favoritesresponse'
-import { deleteFavorites } from '../actions/deleteFavorite'
+import { getIsFavorite } from '../actions/getIsFavorite'
+import { deleteFavorite } from '../actions/deleteFavorite'
+import { postFavorite } from '../actions/postFavorite'
 
 interface InitialStateProps {
-  favorite: string | null
+  favorite: string | null | undefined
   favorites: FavoritesResponse[] | null
   error: string
 }
@@ -23,16 +23,16 @@ export const favoritesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getIsFavorites.fulfilled, (state, { payload: favorites }) => {
+      .addCase(getIsFavorite.fulfilled, (state, { payload: favorites }) => {
         state.favorite = favorites
       })
-      .addCase(sendFavorite.fulfilled, () => {
-        initialState
+      .addCase(postFavorite.fulfilled, (state, { payload: favorite }) => {
+        state.favorite = favorite
       })
       .addCase(getFavorites.fulfilled, (state, { payload: favorites }) => {
         state.favorites = favorites
       })
-      .addCase(deleteFavorites.fulfilled, (state) => {
+      .addCase(deleteFavorite.pending, (state) => {
         state
       })
   },

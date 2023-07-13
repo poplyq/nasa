@@ -7,7 +7,7 @@ const NavigationLogin = () => {
       <Link className='loginLink' to='/home'>
         Не хочешь входить в аккаунт?
       </Link>
-      <Link className='loginLink' to='/registration'>
+      <Link to={'/signup'} className='loginLink'>
         Еще не с нами? Зарегестрируйся
       </Link>
     </div>

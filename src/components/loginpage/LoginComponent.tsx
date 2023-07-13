@@ -2,19 +2,19 @@ import React, { useContext, useState } from 'react'
 import EmailInput from '../common/inputs/EmailInput'
 import PasswordInput from '../common/inputs/PasswordInput'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { makeUserResponse } from '../../helpers/functions/makeUserResponse'
 import { errorUser, setUser } from '../../store/slices/userSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './login.scss'
 import { Context } from '../../helpers/context'
-import { useAppSelector } from '../../store/store'
+
 import { SnackBar } from '../common/snackbar/SnackBar'
 import { useNavigate } from 'react-router-dom'
+import { getStateError } from '../../store/selectors/selectors'
 
 const LoginComponent = () => {
   const auth = useContext(Context)
   const navigate = useNavigate()
-  const { error } = useAppSelector((state) => state.userState)
+  const error = useSelector(getStateError)
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false)
@@ -25,8 +25,13 @@ const LoginComponent = () => {
     e.preventDefault()
     auth &&
       signInWithEmailAndPassword(auth, email, password)
-        .then((user) => makeUserResponse(user))
-        .then((user) => dispatch(setUser(user)))
+        .then((user) => {
+          const email = user.user.email
+          const uid = user.user.uid
+          if (email && uid) {
+            dispatch(setUser({ email, uid }))
+          }
+        })
         .then(() => navigate('/home'))
         .catch(() => dispatch(errorUser('Error')))
   }

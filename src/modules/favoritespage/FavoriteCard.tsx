@@ -8,7 +8,7 @@ interface FavoriteCardProps {
 const FavoriteCard = ({ id }: FavoriteCardProps) => {
   const { data, isSuccess } = useGetCardSearchQuery({ value: id })
   if (isSuccess) {
-    return <CardFavorite card={data} />
+    return <CardFavorite card={data[0]} />
   } else {
     return <Loader />
   }

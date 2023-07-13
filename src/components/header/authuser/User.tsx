@@ -3,12 +3,13 @@ import ToggleImage from '../../common/images/ToggleImage'
 import userIcon from '../../../assets/header/user.png'
 import AuthBlock from '../unauthuser/AuthBlock'
 import UnAuthBlock from '../unauthuser/UnAuthBlock'
-import { useAppSelector } from '../../../store/store'
 import './user.scss'
+import { getStateUser } from '../../../store/selectors/selectors'
+import { useSelector } from 'react-redux'
 
 const User = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const { user } = useAppSelector((state) => state.userState)
+  const user = useSelector(getStateUser)
   const closeWindow = () => {
     setIsOpen(false)
   }

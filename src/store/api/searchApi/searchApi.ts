@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { Card, CollectionResponse, CollectionType } from '../../../types/ui/collection'
+import { transformSearchResponse } from '../../../helpers/functions/transformSearchResponse'
 
 export const searchApi = createApi({
   reducerPath: 'searchApi',
@@ -20,21 +21,11 @@ export const searchApi = createApi({
         transformResponse: (response: CollectionResponse): CollectionType => {
           return {
             url: response.collection.href,
-            cards: response.collection.items.map((item) => {
-              return {
-                id: item.data[0].nasa_id,
-                date: item.data[0].date_created,
-                title: item.data[0].title,
-                location: item.data[0].location,
-                description: item.data[0].description,
-                photographer: item.data[0].photographer,
-                image: item.links[0].href,
-              }
-            }),
+            cards: transformSearchResponse(response),
           }
         },
       }),
-      getCardSearch: build.query<Card, { value: string | null }>({
+      getCardSearch: build.query<Card[], { value: string | null }>({
         query(req) {
           const { value } = req
           return {
@@ -42,17 +33,8 @@ export const searchApi = createApi({
             params: { q: value, page_size: '1', media_type: 'image' },
           }
         },
-        transformResponse: (response: CollectionResponse): Card => {
-          return {
-            id: response.collection.items[0].data[0].nasa_id,
-            date: response.collection.items[0].data[0].date_created,
-            title: response.collection.items[0].data[0].title,
-            location: response.collection.items[0].data[0].location,
-            description: response.collection.items[0].data[0].description,
-            photographer: response.collection.items[0].data[0].photographer,
-            image: response.collection.items[0].links[0].href,
-          }
-        },
+        transformResponse: (response: CollectionResponse): Card[] =>
+          transformSearchResponse(response),
       }),
     }
   },

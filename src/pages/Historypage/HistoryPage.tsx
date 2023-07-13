@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
 import { getHistory } from '../../store/actions/getHistory'
-import { useAppDispatch, useAppSelector } from '../../store/store'
+import { useAppDispatch } from '../../store/store'
 import HistoryModule from '../../modules/historypage/HistoryModule'
+import { getStateHistory } from '../../store/selectors/selectors'
+import { useSelector } from 'react-redux'
 
 const HistoryPage = () => {
-  const { history } = useAppSelector((state) => state.historyState)
+  const history = useSelector(getStateHistory)
   const dispatch = useAppDispatch()
 
   useEffect(() => {

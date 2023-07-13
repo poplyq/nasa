@@ -3,13 +3,13 @@ import { db } from '../../firebase'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { RootState } from '../store'
 
-export const getIsFavorites = createAsyncThunk(
+export const getIsFavorite = createAsyncThunk<string | null, string, { state: RootState }>(
   'user/getIsFavorites',
   async (id: string, { getState }) => {
-    const state = getState() as RootState
+    const { userState } = getState()
     const q = query(
       collection(db, 'favorites'),
-      where('email', '==', `${state.userState.user?.email}`),
+      where('email', '==', `${userState.user?.email}`),
       where('search', '==', `${id}`),
     )
     const querySnapshot = await getDocs(q)

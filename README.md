@@ -10,7 +10,7 @@ React
 
 Есть  разделение на умные и глупые компоненты
 
-Есть рендеринг списков FavoritesPage
+Есть рендеринг списков [FavoritesPage](https://github.com/poplyq/nasa/blob/main/src/pages/Favoritepage/FavoritesPage.tsx)
 
 Реализована хотя бы одна форма LoginComponent
 

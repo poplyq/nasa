@@ -10,12 +10,9 @@ interface EmailInputProps {
 }
 
 function EmailInput({ setEmail, email, setIsValid }: EmailInputProps) {
-  const validateForm = () => {
-    setIsValid(validateEmail(email))
-  }
-
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setEmail(e.currentTarget.value)
+    setIsValid(validateEmail(e.currentTarget.value))
   }
 
   return (
@@ -24,7 +21,6 @@ function EmailInput({ setEmail, email, setIsValid }: EmailInputProps) {
       type='email'
       value={email}
       onChange={handleChange}
-      onBlur={validateForm}
       placeholder='Enter email'
     />
   )

@@ -13,17 +13,15 @@ interface PasswordInputProps {
 function PasswordInput({ password, setPassword, placeholder, setIsValid }: PasswordInputProps) {
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setPassword(e.currentTarget.value)
+    setIsValid(validatePassword(e.currentTarget.value))
   }
-  const validateForm = () => {
-    password && setIsValid(validatePassword(password))
-  }
+
   return (
     <input
       type='password'
       className='passwordInput'
       value={password}
       onChange={handleChange}
-      onBlur={validateForm}
       placeholder={placeholder}
     />
   )

@@ -1,5 +1,6 @@
 import { ComponentType, lazy } from 'react'
 const SearchPage = lazy(() => import('../pages/Searchpage/SearchPage'))
+const CardPage = lazy(() => import('../pages/Cardpage/CardPage'))
 const FavoritesPage = lazy(() => import('../pages/Favoritepage/FavoritesPage'))
 const HistoryPage = lazy(() => import('../pages/Historypage/HistoryPage'))
 const HomePage = lazy(() => import('../pages/Homepage/HomePage'))
@@ -67,7 +68,7 @@ export const privateRoutes: RoutesType[] = [
   },
   {
     path: ELEMENT_ROUTE,
-    component: SearchPage,
+    component: CardPage,
   },
   {
     path: '*',

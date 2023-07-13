@@ -9,7 +9,6 @@ interface SearchComponentProps {
 const SearchComponent = ({ data, setValue }: SearchComponentProps) => {
   return (
     <div className='searchComponentContainer'>
-      <div className='wrapper' onClick={() => setValue('')} />
       {data.cards.map((card) => (
         <SearchBlock card={card} key={card.id} setValue={setValue} />
       ))}

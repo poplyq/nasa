@@ -27,7 +27,7 @@ const CardFavorite = ({ card }: CardFavoriteProps) => {
         </div>
       </Link>
       <button className='button' onClick={handleClick}>
-        В избранном
+        Удалить из избранного
       </button>
     </div>
   )

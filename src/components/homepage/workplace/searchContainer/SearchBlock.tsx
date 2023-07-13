@@ -13,8 +13,8 @@ function SearchBlock({ card, setValue }: SearchBlockProps) {
   const { user } = useAppSelector((state) => state.userState)
   const navigate = useNavigate()
   const handleClick = () => {
-    setValue('')
     navigate(`/search?search=${card.id}`)
+    setValue('')
     user && sendSearch(user.email, card.id, card.title)
   }
   return (

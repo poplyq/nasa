@@ -10,7 +10,6 @@ interface CardSearchProps {
 }
 const CardSearch = ({ card }: CardSearchProps) => {
   const dispatch = useAppDispatch()
-
   const { favorite } = useAppSelector((state) => state.favoritesState)
   const [isFavorite, setIsFavorite] = useState<boolean>(false)
   const { user } = useAppSelector((state) => state.userState)

@@ -10,6 +10,7 @@ const Searchmodule = () => {
   const newValue = useDebounce<string>(value, 500)
   const [search, setSearch] = useState<string>('')
   const { data } = useGetDataSearchQuery({ value: search })
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
@@ -18,12 +19,15 @@ const Searchmodule = () => {
   useEffect(() => {
     setSearch(newValue)
   }, [newValue])
-
+  const open = () => {
+    setIsOpen(true)
+  }
   return (
     <div className='searchModule'>
-      <input type='text' value={value} onChange={handleChange} className='input' />
+      <input type='text' value={value} onChange={handleChange} className='input' onFocus={open} />
+      {isOpen && search && <div className='wrapper' onClick={() => setIsOpen(false)} />}
       <img className='img' src={logo} />
-      {search && data?.cards && <SearchComponent data={data} setValue={setValue} />}
+      {isOpen && search && data?.cards && <SearchComponent data={data} setValue={setValue} />}
     </div>
   )
 }

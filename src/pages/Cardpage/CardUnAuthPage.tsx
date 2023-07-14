@@ -8,7 +8,7 @@ const CardUnAuthPage = () => {
   const [searchParams] = useSearchParams()
   const { data: card, isSuccess } = useGetCardSearchQuery({ value: searchParams.get('card') })
   if (isSuccess) {
-    return <CardBlock card={card[0]} />
+    return <CardBlock card={card} />
   } else {
     return <Loader />
   }

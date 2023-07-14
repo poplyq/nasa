@@ -16,15 +16,15 @@ const CardAuthPage = () => {
   const favorite = useSelector(getStateFavorite)
 
   useEffect(() => {
-    card && dispatch(getIsFavorite(card[0].id))
+    card && dispatch(getIsFavorite(card.id))
   }, [card, dispatch])
 
   const handleClick = () => {
-    card && dispatch(postFavorite(card[0].id))
+    card && dispatch(postFavorite(card.id))
   }
 
   if (isSuccess) {
-    return <CardBlock card={card[0]} isUser={true} sendFavorite={handleClick} favorite={favorite} />
+    return <CardBlock card={card} isUser={true} sendFavorite={handleClick} favorite={favorite} />
   } else {
     return <Loader />
   }

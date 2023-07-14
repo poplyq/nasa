@@ -25,7 +25,7 @@ const CardBlock = ({ card, favorite, sendFavorite, isUser }: CardSearchProps) =>
             {favorite === card.id ? (
               <span className='span'> В избранном</span>
             ) : (
-              <button onClick={handleClick} className='button'>
+              <button onClick={handleClick} className='cardSearchContainerButton'>
                 В избранное
               </button>
             )}

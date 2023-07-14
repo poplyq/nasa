@@ -7,10 +7,11 @@ import { useNavigate } from 'react-router-dom'
 
 const GoogleLogin = () => {
   const auth = useContext(Context)
-  const provider = new GoogleAuthProvider()
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const handleClick = () => {
+    const provider = new GoogleAuthProvider()
     auth &&
       signInWithPopup(auth, provider)
         .then((result) => {

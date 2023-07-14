@@ -17,7 +17,6 @@ export const getHistory = createAsyncThunk<HistoryResponse[], void, { state: Roo
       newarr = [
         ...newarr,
         {
-          title: doc.data().title,
           createdAt: doc.data().createdAt.split(' ').slice(0, 5).join(' '),
           search: doc.data().search,
         },

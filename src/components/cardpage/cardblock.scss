@@ -17,18 +17,19 @@
     text-align: center;
     padding-top: 2px;
   }
-  .button {
-    width: 180px;
-    height: 25px;
-    background-color: #fff;
-    border: 1px rgb(232, 203, 166) solid;
-    border-radius: 5px;
-    margin-top: 10px;
-    text-align: center;
-    padding-top: 2px;
-    cursor: pointer;
-  }
+
   .img {
     max-width: 50%;
   }
+}
+.cardSearchContainerButton{
+  width: 180px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px rgb(232, 203, 166) solid;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 2px;
+  cursor: pointer;
 }

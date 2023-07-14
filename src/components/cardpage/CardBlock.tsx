@@ -6,8 +6,9 @@ interface CardSearchProps {
   card: Card
   favorite?: string | null
   sendFavorite?(arg: void): void
+  isUser?: boolean
 }
-const CardBlock = ({ card, favorite, sendFavorite }: CardSearchProps) => {
+const CardBlock = ({ card, favorite, sendFavorite, isUser }: CardSearchProps) => {
   const handleClick = () => {
     sendFavorite && sendFavorite()
   }
@@ -19,12 +20,12 @@ const CardBlock = ({ card, favorite, sendFavorite }: CardSearchProps) => {
         <p>{card.location}</p>
         <p>{card.date}</p>
         <p>{card.description}</p>
-        {favorite && (
+        {isUser && (
           <div>
             {favorite === card.id ? (
               <span className='span'> В избранном</span>
             ) : (
-              <button onClick={handleClick} className='button'>
+              <button onClick={handleClick} className='cardSearchContainerButton'>
                 В избранное
               </button>
             )}

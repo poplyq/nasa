@@ -25,7 +25,7 @@ export const searchApi = createApi({
           }
         },
       }),
-      getCardSearch: build.query<Card[], { value: string | null }>({
+      getCardSearch: build.query<Card, { value: string | null }>({
         query(req) {
           const { value } = req
           return {
@@ -33,8 +33,8 @@ export const searchApi = createApi({
             params: { q: value, page_size: '1', media_type: 'image' },
           }
         },
-        transformResponse: (response: CollectionResponse): Card[] =>
-          transformSearchResponse(response),
+        transformResponse: (response: CollectionResponse): Card =>
+          transformSearchResponse(response)[0],
       }),
     }
   },

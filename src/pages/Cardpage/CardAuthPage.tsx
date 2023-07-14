@@ -24,7 +24,7 @@ const CardAuthPage = () => {
   }
 
   if (isSuccess) {
-    return <CardBlock card={card[0]} favorite={favorite} sendFavorite={handleClick} />
+    return <CardBlock card={card[0]} isUser={true} sendFavorite={handleClick} favorite={favorite} />
   } else {
     return <Loader />
   }

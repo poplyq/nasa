@@ -1,12 +1,11 @@
 import { addDoc, collection } from 'firebase/firestore'
 import { db } from '../../firebase'
 
-export const sendSearch = async (email: string, search: string, title: string) => {
+export const sendSearch = async (email: string, search: string) => {
   const now = new Date()
   await addDoc(collection(db, 'search'), {
     email,
     search,
-    title,
     createdAt: now.toString(),
   })
 }

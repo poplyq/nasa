@@ -7,6 +7,7 @@ const HomePage = lazy(() => import('../pages/Homepage/HomePage'))
 const LoginPage = lazy(() => import('../pages/Loginpage/LoginPage'))
 const LogoutPage = lazy(() => import('../pages/Logoutpage/LogoutPage'))
 const RegistrationPage = lazy(() => import('../pages/Registrationpage/RegistrationPage'))
+const SearchPage = lazy(() => import('../pages/Searchpage/SearchPage'))
 
 import {
   CARD_ROUTE,
@@ -17,6 +18,7 @@ import {
   LOGOUT_ROUTE,
   MAIN_ROUTE,
   SIGNUP_ROUTE,
+  SEARCH_ROUTE,
 } from './variebles'
 
 export interface RoutesType {
@@ -45,6 +47,10 @@ export const publickRoutes: RoutesType[] = [
     component: HomePage,
   },
   {
+    path: SEARCH_ROUTE,
+    component: SearchPage,
+  },
+  {
     path: '*',
     component: LoginPage,
   },
@@ -69,6 +75,10 @@ export const privateRoutes: RoutesType[] = [
   {
     path: CARD_ROUTE,
     component: CardAuthPage,
+  },
+  {
+    path: SEARCH_ROUTE,
+    component: SearchPage,
   },
   {
     path: '*',

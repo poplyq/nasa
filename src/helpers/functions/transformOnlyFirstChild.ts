@@ -1,6 +1,6 @@
 import { Card, CollectionResponse } from '../../types/ui/collection'
 
-export const transformSingleSearchResponse = (response: CollectionResponse) => {
+export const transformOnlyFirstChild = (response: CollectionResponse) => {
   const transformedResponse: Card[] = response.collection.items.map((item) => {
     return {
       id: item.data[0].nasa_id,

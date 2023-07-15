@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { Card, CollectionResponse, CollectionType } from '../../../types/ui/collection'
 import { transformSearchResponse } from '../../../helpers/functions/transformSearchResponse'
+import { transformSingleSearchResponse } from '../../../helpers/functions/transformSingleSearchResponse'
 
 export const searchApi = createApi({
   reducerPath: 'searchApi',
@@ -34,7 +35,7 @@ export const searchApi = createApi({
           }
         },
         transformResponse: (response: CollectionResponse): Card =>
-          transformSearchResponse(response)[0],
+          transformSingleSearchResponse(response),
       }),
     }
   },

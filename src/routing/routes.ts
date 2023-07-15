@@ -5,7 +5,6 @@ const FavoritesPage = lazy(() => import('../pages/Favoritepage/FavoritesPage'))
 const HistoryPage = lazy(() => import('../pages/Historypage/HistoryPage'))
 const HomePage = lazy(() => import('../pages/Homepage/HomePage'))
 const LoginPage = lazy(() => import('../pages/Loginpage/LoginPage'))
-const LogoutPage = lazy(() => import('../pages/Logoutpage/LogoutPage'))
 const RegistrationPage = lazy(() => import('../pages/Registrationpage/RegistrationPage'))
 const SearchPage = lazy(() => import('../pages/Searchpage/SearchPage'))
 
@@ -15,7 +14,6 @@ import {
   HISTORY_ROUTE,
   HOME_ROUTE,
   LOGIN_ROUTE,
-  LOGOUT_ROUTE,
   MAIN_ROUTE,
   SIGNUP_ROUTE,
   SEARCH_ROUTE,
@@ -67,10 +65,6 @@ export const privateRoutes: RoutesType[] = [
   {
     path: HISTORY_ROUTE,
     component: HistoryPage,
-  },
-  {
-    path: LOGOUT_ROUTE,
-    component: LogoutPage,
   },
   {
     path: CARD_ROUTE,

@@ -1,18 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import EmailInput from '../common/inputs/EmailInput'
 import PasswordInput from '../common/inputs/PasswordInput'
-import { useDispatch } from 'react-redux'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { setUser } from '../../store/slices/userSlice'
+
 import GoogleLogin from '../loginpage/GoogleLogin'
-import { useNavigate } from 'react-router-dom'
-import { Context } from '../../helpers/context'
+import useAuth from '../../helpers/hooks/useAuth'
 
 const SignUp = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const auth = useContext(Context)
-
+  const { signUp } = useAuth()
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false)
@@ -20,16 +14,7 @@ const SignUp = () => {
 
   const register = (e: React.SyntheticEvent) => {
     e.preventDefault()
-    auth &&
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((user) => {
-          const email = user.user.email
-          const uid = user.user.uid
-          if (email && uid) {
-            dispatch(setUser({ email, uid }))
-          }
-        })
-        .then(() => navigate('/home'))
+    signUp({ email, password })
   }
 
   return (

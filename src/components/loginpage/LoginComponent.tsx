@@ -1,39 +1,23 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import EmailInput from '../common/inputs/EmailInput'
 import PasswordInput from '../common/inputs/PasswordInput'
-import { signInWithEmailAndPassword } from 'firebase/auth'
-import { errorUser, setUser } from '../../store/slices/userSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import './login.scss'
-import { Context } from '../../helpers/context'
-
 import { SnackBar } from '../common/snackbar/SnackBar'
-import { useNavigate } from 'react-router-dom'
 import { getStateError } from '../../store/selectors/selectors'
+import useAuth from '../../helpers/hooks/useAuth'
 
 const LoginComponent = () => {
-  const auth = useContext(Context)
-  const navigate = useNavigate()
   const error = useSelector(getStateError)
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false)
   const [isPassValid, setIsPassValid] = useState<boolean>(false)
-  const dispatch = useDispatch()
+  const { signIn } = useAuth()
 
   const loginUser = (e: React.SyntheticEvent) => {
     e.preventDefault()
-    auth &&
-      signInWithEmailAndPassword(auth, email, password)
-        .then((user) => {
-          const email = user.user.email
-          const uid = user.user.uid
-          if (email && uid) {
-            dispatch(setUser({ email, uid }))
-          }
-        })
-        .then(() => navigate('/home'))
-        .catch(() => dispatch(errorUser('Error')))
+    signIn({ email, password })
   }
   return (
     <div className='loginContainer'>

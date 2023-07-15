@@ -7,7 +7,6 @@ import SearchContainer from '../../modules/searchpage/SearchContainer'
 const SearchPage = () => {
   const [searchParams] = useSearchParams()
   const { data: cards, isSuccess } = useGetDataSearchQuery({ value: searchParams.get('search') })
-  console.log(cards)
 
   if (isSuccess) {
     return <SearchContainer cards={cards.cards} />

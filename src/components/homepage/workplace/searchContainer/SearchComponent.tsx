@@ -1,5 +1,5 @@
 import React from 'react'
-import { CollectionType } from '../../../../types/ui/collection'
+import { CollectionType } from '../../../../types/response/collection'
 import SearchBlock from './SearchBlock'
 import './searchcontainer.scss'
 interface SearchComponentProps {

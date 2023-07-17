@@ -3,7 +3,9 @@ import './pod.scss'
 
 const PictureOfDay = () => {
   const { data, refetch } = useGetPhotoOfDayQuery()
-
+  const handleClick = () => {
+    refetch()
+  }
   return (
     <div className='pictureOfDay'>
       <h2 className='podTitle'> Astronomy Picture of the Day</h2>
@@ -21,7 +23,7 @@ const PictureOfDay = () => {
               <p>{picture.explanation}</p>
               <p>{picture.date}</p>
             </div>
-            <button className='button' onClick={() => refetch()}>
+            <button className='button' onClick={handleClick}>
               Random photo
             </button>
           </div>

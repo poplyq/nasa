@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Card } from '../../types/ui/collection'
+import { Card } from '../../types/response/collection'
 interface SearchCardProps {
   card: Card
 }

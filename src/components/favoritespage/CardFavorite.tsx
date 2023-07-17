@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppDispatch } from '../../store/store'
-import { Card } from '../../types/ui/collection'
+import { Card } from '../../types/response/collection'
 import { deleteFavorite } from '../../store/actions/deleteFavorite'
 import './cardfavorite.scss'
 import { Link } from 'react-router-dom'

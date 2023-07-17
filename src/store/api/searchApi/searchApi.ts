@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
-import { Card, CollectionResponse, CollectionType } from '../../../types/ui/collection'
+import { Card, CollectionResponse, CollectionType } from '../../../types/response/collection'
 import { transformSearchResponse } from '../../../helpers/functions/transformSearchResponse'
 import { transformOnlyFirstChild } from '../../../helpers/functions/transformOnlyFirstChild'
 

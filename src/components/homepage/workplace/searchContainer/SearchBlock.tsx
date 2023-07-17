@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from '../../../../types/ui/collection'
+import { Card } from '../../../../types/response/collection'
 import './searchcontainer.scss'
 import { useNavigate } from 'react-router-dom'
 

@@ -1,4 +1,4 @@
-import { Card } from '../../types/ui/collection'
+import { Card } from '../../types/response/collection'
 import SearchCard from '../../components/searchpage/SearchCard'
 import './searchcontainer.scss'
 

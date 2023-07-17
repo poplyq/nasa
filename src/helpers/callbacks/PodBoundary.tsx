@@ -1,7 +1,7 @@
 import React from 'react'
 interface PodBoundaryProps {
   error: Error
-  resetErrorBoundary(arg: void): void
+  resetErrorBoundary(): void
 }
 export const PodBoundary = ({ error, resetErrorBoundary }: PodBoundaryProps) => {
   return (

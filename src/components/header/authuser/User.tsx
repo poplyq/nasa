@@ -6,6 +6,7 @@ import UnAuthBlock from '../unauthuser/UnAuthBlock'
 import './user.scss'
 import { getStateUser } from '../../../store/selectors/selectors'
 import { useSelector } from 'react-redux'
+import { SnackBar } from '../../common/snackbar/SnackBar'
 
 const User = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -13,6 +14,7 @@ const User = () => {
   const closeWindow = () => {
     setIsOpen(false)
   }
+  console.log(user?.serviсeMesssage)
 
   return (
     <>
@@ -24,6 +26,7 @@ const User = () => {
           <UnAuthBlock closeWindow={closeWindow} />
         ))}
       {isOpen && <div className='userBarWrapper' onClick={() => setIsOpen(false)}></div>}
+      {user?.serviсeMesssage && <SnackBar message={user.serviсeMesssage} />}
     </>
   )
 }

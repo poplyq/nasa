@@ -1,12 +1,12 @@
 import React from 'react'
-import { IUser } from '../../../types/ui/user'
+import { UserResponse } from '../../../types/response/user'
 import { Link } from 'react-router-dom'
 import './authblock.scss'
 import useAuth from '../../../helpers/hooks/useAuth'
 
 interface AuthBlockProps {
-  user: IUser
-  closeWindow(arg: void): void
+  user: UserResponse
+  closeWindow(): void
 }
 const AuthBlock = ({ user, closeWindow }: AuthBlockProps) => {
   const { logOut } = useAuth()

@@ -1,11 +1,11 @@
 import React from 'react'
-import { Card } from '../../types/ui/collection'
+import { Card } from '../../types/response/collection'
 import './cardblock.scss'
 
 interface CardSearchProps {
   card: Card
   favorite?: string | null
-  sendFavorite?(arg: void): void
+  sendFavorite?(): void
   isUser?: boolean
 }
 const CardBlock = ({ card, favorite, sendFavorite, isUser }: CardSearchProps) => {

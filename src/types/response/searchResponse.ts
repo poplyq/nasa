@@ -1,4 +1,4 @@
-import { CollectionType } from '../ui/collection'
+import { CollectionType } from './collection'
 
 export interface SearchResponse {
   collection: CollectionType

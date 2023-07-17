@@ -1,4 +1,4 @@
-import { Card, CollectionResponse } from '../../types/ui/collection'
+import { Card, CollectionResponse } from '../../types/response/collection'
 
 export const transformOnlyFirstChild = (response: CollectionResponse) => {
   const transformedResponse: Card[] = response.collection.items.map((item) => {

@@ -1,5 +1,5 @@
-import { IUser } from '../ui/user'
+import { UserResponse } from './user'
 
 export interface SignUpResponse {
-  user: IUser
+  user: UserResponse
 }

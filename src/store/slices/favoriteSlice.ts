@@ -8,13 +8,13 @@ import { postFavorite } from '../actions/postFavorite'
 interface InitialStateProps {
   favorite: string | null | undefined
   favorites: FavoritesResponse[] | null
-  error: string
+  serviceMessage: string
 }
 
 const initialState: InitialStateProps = {
   favorites: null,
   favorite: null,
-  error: '',
+  serviceMessage: '',
 }
 
 export const favoritesSlice = createSlice({
@@ -31,9 +31,10 @@ export const favoritesSlice = createSlice({
       })
       .addCase(getFavorites.fulfilled, (state, { payload: favorites }) => {
         state.favorites = favorites
+        state.serviceMessage = ''
       })
       .addCase(deleteFavorite.pending, (state) => {
-        state
+        state.serviceMessage = 'Карточка удалена'
       })
   },
 })

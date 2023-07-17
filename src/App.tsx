@@ -1,6 +1,5 @@
 import './App.css'
 import Header from './modules/header/Header'
-import User from './components/header/authuser/User'
 import AppRouter from './routing/AppRouter'
 import { Suspense } from 'react'
 import Loader from './modules/loader/Loader'
@@ -10,7 +9,7 @@ export default function App() {
   useRelogin()
   return (
     <div className='App'>
-      <Header user={<User />} />
+      <Header />
       <Suspense fallback={<Loader />}>
         <AppRouter />
       </Suspense>

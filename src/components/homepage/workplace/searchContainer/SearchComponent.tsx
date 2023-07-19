@@ -12,6 +12,7 @@ const SearchComponent = ({ data, setValue }: SearchComponentProps) => {
       {data.cards.map((card) => (
         <SearchBlock card={card} key={card.id} setValue={setValue} />
       ))}
+      {data.cards.length < 1 && <p>По вашему запросу ничего не найдено</p>}
     </div>
   )
 }

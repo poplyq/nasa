@@ -14,8 +14,6 @@ const User = () => {
   const closeWindow = () => {
     setIsOpen(false)
   }
-  console.log(user?.serviсeMesssage)
-
   return (
     <>
       <ToggleImage isOpen={isOpen} setIsOpen={setIsOpen} imgUrl={userIcon} />
